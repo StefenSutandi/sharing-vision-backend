@@ -1,10 +1,10 @@
 package validator_test
 
 import (
-	"testing"
-	"strings"
 	"github.com/StefenSutandi/sharing-vision-backend/internal/dto"
 	"github.com/StefenSutandi/sharing-vision-backend/internal/validator"
+	"strings"
+	"testing"
 )
 
 func TestArticleValidator(t *testing.T) {

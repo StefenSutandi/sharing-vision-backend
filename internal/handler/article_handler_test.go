@@ -71,6 +71,7 @@ func (m *MockService) TrashArticle(id int64) error {
 }
 
 type MockValidator struct{}
+
 func (m *MockValidator) Validate(i interface{}) error { return nil }
 
 func setupRouter() (*gin.Engine, *MockService) {
@@ -130,7 +131,7 @@ func TestArticleHandler(t *testing.T) {
 			t.Errorf("Expected 400, got %d", w.Code)
 		}
 	})
-	
+
 	t.Run("Update Article Malformed JSON", func(t *testing.T) {
 		req, _ := http.NewRequest("PUT", "/article/1", bytes.NewBufferString("{malformed json"))
 		req.Header.Set("Content-Type", "application/json")

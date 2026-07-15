@@ -25,7 +25,7 @@ func main() {
 	articleHandler := handler.NewArticleHandler(articleService)
 
 	r := gin.Default()
-	
+
 	configCORS := cors.DefaultConfig()
 	configCORS.AllowAllOrigins = true
 	configCORS.AllowMethods = []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}

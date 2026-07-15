@@ -68,7 +68,7 @@ func TestArticleService(t *testing.T) {
 		Category: " Tech ",
 		Status:   "publish",
 	}
-	
+
 	err := svc.CreateArticle(payload)
 	if err != nil {
 		t.Errorf("CreateArticle failed: %v", err)
@@ -131,7 +131,7 @@ func TestArticleService(t *testing.T) {
 	if err == nil {
 		t.Errorf("Expected error for trash missing article")
 	}
-	
+
 	repo.Create(&model.Article{Title: "A", Status: "publish"})
 	repo.Create(&model.Article{Title: "B", Status: "publish"})
 	repo.Create(&model.Article{Title: "C", Status: "draft"})
@@ -151,7 +151,7 @@ func TestArticleService(t *testing.T) {
 	if paginatedDrafts.Pagination.Total != 1 {
 		t.Errorf("Expected total 1 draft, got %d", paginatedDrafts.Pagination.Total)
 	}
-	
+
 	paginatedLimit, _ := svc.GetArticles(2, 0, "")
 	if len(paginatedLimit.Data) != 2 {
 		t.Errorf("Expected limit 2 to return 2 items, got %d", len(paginatedLimit.Data))
