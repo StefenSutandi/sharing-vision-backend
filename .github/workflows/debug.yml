@@ -1,0 +1,26 @@
+name: Debug CI
+
+on:
+  push:
+    branches:
+      - 'debug-ci*'
+
+jobs:
+  debug-ci:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch CI runs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh run list --workflow "backend-ci.yml" --branch main --json databaseId,headSha,status,conclusion,url --limit 1 > runs.json
+          git config user.name "Debug Bot"
+          git config user.email "bot@example.com"
+          git checkout -b ${GITHUB_REF#refs/heads/}-result
+          git add runs.json
+          git commit -m "Add runs"
+          git push -f origin ${GITHUB_REF#refs/heads/}-result
