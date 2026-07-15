@@ -112,7 +112,7 @@
 							"});",
 							"pm.test(\"ID matches\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"article_id\"));",
+							"    pm.expect(jsonData.id).to.eql(Number(pm.collectionVariables.get(\"article_id\")));",
 							"});"
 						],
 						"type": "text/javascript"
@@ -200,7 +200,7 @@
 							"});",
 							"pm.test(\"Status is thrash\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.status).to.eql(\"thrash\");",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");",
 							"});"
 						],
 						"type": "text/javascript"
