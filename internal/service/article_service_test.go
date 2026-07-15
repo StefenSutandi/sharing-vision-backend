@@ -114,7 +114,7 @@ func TestArticleService(t *testing.T) {
 	if len(valErrs2) > 0 {
 		t.Errorf("Expected 0 validation errors on update, got %v", valErrs2)
 	}
-	
+
 	if updatedArt.Title != "Updated Title twenty chars" || updatedArt.Status != "draft" {
 		t.Errorf("Article not properly updated")
 	}
