@@ -17,10 +17,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh run list --workflow "backend-ci.yml" --branch main --json databaseId,headSha,status,conclusion,url --limit 1 > runs.json
+          gh run view 29409588227 --log > ci.log
           git config user.name "Debug Bot"
           git config user.email "bot@example.com"
           git checkout -b ${GITHUB_REF#refs/heads/}-result
-          git add runs.json
-          git commit -m "Add runs"
+          git add ci.log
+          git commit -m "Add log"
           git push -f origin ${GITHUB_REF#refs/heads/}-result
