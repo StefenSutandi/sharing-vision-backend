@@ -56,41 +56,44 @@ func (m *MockRepo) Update(a *model.Article) error {
 func TestArticleService(t *testing.T) {
 	repo := &MockRepo{
 		articles: make(map[int64]*model.Article),
-		nextID:   1,
+		nextID   1,
 	}
 	svc := service.NewArticleService(repo)
 
 	validContent := strings.Repeat("a", 200)
 
-	payload := dto.ArticlePayload{
-		Title:    "  Trimmed Title  ",
+	payload := dto.CreateArticleReq{
+		Title:    "  Trimmed Title twenty chars  ",
 		Content:  validContent,
 		Category: " Tech ",
 		Status:   "publish",
 	}
 
-	err := svc.CreateArticle(payload)
+	createdArt, valErrs, err := svc.CreateArticle(&payload)
 	if err != nil {
 		t.Errorf("CreateArticle failed: %v", err)
 	}
+	if len(valErrs) > 0 {
+		t.Errorf("Expected 0 validation errors, got %v", valErrs)
+	}
 
-	created, err := repo.FindByID(1)
+	created, err := repo.FindByID(createdArt.ID)
 	if err != nil {
 		t.Fatalf("Failed to find created article: %v", err)
 	}
-	if created.Title != "Trimmed Title" {
+	if created.Title != "Trimmed Title twenty chars" {
 		t.Errorf("Title not trimmed, got %q", created.Title)
 	}
 	if created.Category != "Tech" {
 		t.Errorf("Category not trimmed, got %q", created.Category)
 	}
 
-	dtoArt, err := svc.GetArticleByID(1)
+	foundArt, err := svc.GetArticleByID(createdArt.ID)
 	if err != nil {
 		t.Errorf("GetArticleByID failed: %v", err)
 	}
-	if dtoArt.Title != "Trimmed Title" {
-		t.Errorf("Expected Trimmed Title, got %q", dtoArt.Title)
+	if foundArt.Title != "Trimmed Title twenty chars" {
+		t.Errorf("Expected Trimmed Title, got %q", foundArt.Title)
 	}
 
 	_, err = svc.GetArticleByID(99)
@@ -98,31 +101,34 @@ func TestArticleService(t *testing.T) {
 		t.Errorf("Expected error for missing article")
 	}
 
-	updatePayload := dto.ArticlePayload{
-		Title:    "Updated Title",
+	updatePayload := dto.UpdateArticleReq{
+		Title:    "Updated Title twenty chars",
 		Content:  payload.Content,
 		Category: "Tech Updated",
 		Status:   "draft",
 	}
-	err = svc.UpdateArticle(1, updatePayload)
+	updatedArt, valErrs2, err := svc.UpdateArticle(createdArt.ID, &updatePayload)
 	if err != nil {
 		t.Errorf("UpdateArticle failed: %v", err)
 	}
-	updated, _ := repo.FindByID(1)
-	if updated.Title != "Updated Title" || updated.Status != "draft" {
+	if len(valErrs2) > 0 {
+		t.Errorf("Expected 0 validation errors on update, got %v", valErrs2)
+	}
+	
+	if updatedArt.Title != "Updated Title twenty chars" || updatedArt.Status != "draft" {
 		t.Errorf("Article not properly updated")
 	}
 
-	err = svc.UpdateArticle(99, updatePayload)
+	_, _, err = svc.UpdateArticle(99, &updatePayload)
 	if err == nil {
 		t.Errorf("Expected error for update missing article")
 	}
 
-	err = svc.TrashArticle(1)
+	err = svc.TrashArticle(createdArt.ID)
 	if err != nil {
 		t.Errorf("TrashArticle failed: %v", err)
 	}
-	trashed, _ := repo.FindByID(1)
+	trashed, _ := repo.FindByID(createdArt.ID)
 	if trashed.Status != "thrash" {
 		t.Errorf("Expected status to be 'thrash', got %q", trashed.Status)
 	}
@@ -136,27 +142,27 @@ func TestArticleService(t *testing.T) {
 	repo.Create(&model.Article{Title: "B", Status: "publish"})
 	repo.Create(&model.Article{Title: "C", Status: "draft"})
 
-	paginated, err := svc.GetArticles(10, 0, "")
+	paginated, err := svc.ListArticles(10, 0, "")
 	if err != nil {
-		t.Errorf("GetArticles failed: %v", err)
+		t.Errorf("ListArticles failed: %v", err)
 	}
 	if paginated.Pagination.Total != 4 {
 		t.Errorf("Expected total 4, got %d", paginated.Pagination.Total)
 	}
 
-	paginatedDrafts, err := svc.GetArticles(10, 0, "draft")
+	paginatedDrafts, err := svc.ListArticles(10, 0, "draft")
 	if err != nil {
-		t.Errorf("GetArticles draft failed: %v", err)
+		t.Errorf("ListArticles draft failed: %v", err)
 	}
 	if paginatedDrafts.Pagination.Total != 1 {
 		t.Errorf("Expected total 1 draft, got %d", paginatedDrafts.Pagination.Total)
 	}
 
-	paginatedLimit, _ := svc.GetArticles(2, 0, "")
+	paginatedLimit, _ := svc.ListArticles(2, 0, "")
 	if len(paginatedLimit.Data) != 2 {
 		t.Errorf("Expected limit 2 to return 2 items, got %d", len(paginatedLimit.Data))
 	}
-	paginatedOffset, _ := svc.GetArticles(10, 2, "")
+	paginatedOffset, _ := svc.ListArticles(10, 2, "")
 	if len(paginatedOffset.Data) != 2 {
 		t.Errorf("Expected offset 2 out of 4 to return 2 items, got %d", len(paginatedOffset.Data))
 	}

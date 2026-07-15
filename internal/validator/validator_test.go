@@ -8,14 +8,12 @@ import (
 )
 
 func TestArticleValidator(t *testing.T) {
-	v := validator.NewValidator()
-
 	validContent := strings.Repeat("a", 200)
 	tooLongTitle := strings.Repeat("a", 201)
 
 	tests := []struct {
 		name    string
-		payload dto.ArticlePayload
+		payload dto.CreateArticleReq
 		valid   bool
 	}{
 		{
@@ -132,11 +130,11 @@ func TestArticleValidator(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			err := v.Validate(tt.payload)
-			if tt.valid && err != nil {
-				t.Errorf("expected valid, got error: %v", err)
+			errs := validator.ValidateStruct(tt.payload)
+			if tt.valid && len(errs) > 0 {
+				t.Errorf("expected valid, got error: %v", errs)
 			}
-			if !tt.valid && err == nil {
+			if !tt.valid && len(errs) == 0 {
 				t.Errorf("expected error, got valid")
 			}
 		})
