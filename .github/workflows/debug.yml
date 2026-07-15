@@ -1,0 +1,38 @@
+name: Debug CI
+
+on:
+  push:
+    branches:
+      - 'debug-ci*'
+
+jobs:
+  debug-ci:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch failed CI log
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Find the latest failed Backend CI run on main
+          FAILED_RUN=$(gh run list --workflow "backend-ci.yml" --branch main --json databaseId,status,conclusion --jq '.[0].databaseId')
+          
+          if [ -n "$FAILED_RUN" ] && [ "$FAILED_RUN" != "null" ]; then
+            echo "Fetching log for run $FAILED_RUN"
+            gh run view $FAILED_RUN --log > ci.log
+          else
+            echo "No run found." > ci.log
+          fi
+
+          git config user.name "Debug Bot"
+          git config user.email "bot@example.com"
+          git checkout -b ${GITHUB_REF#refs/heads/}-result
+          git add ci.log
+          git commit -m "Add debug CI log"
+          git push -f origin ${GITHUB_REF#refs/heads/}-result
