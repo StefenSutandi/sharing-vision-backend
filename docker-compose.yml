@@ -40,4 +40,8 @@ services:
         condition: service_completed_successfully
     environment:
       - PORT=8080
-      - DB_DSN=root:root@tcp(mysql:3306)/article?charset=utf8mb4&parseTime=True&loc=Local
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=article
