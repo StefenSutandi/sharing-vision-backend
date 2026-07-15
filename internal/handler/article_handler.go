@@ -42,7 +42,7 @@ func (h *ArticleHandler) Create(c *gin.Context) {
 		return
 	}
 	if valErrs != nil {
-		c.JSON(http.StatusUnprocessableEntity, dto.ErrorResponse{
+		c.JSON(http.StatusBadRequest, dto.ErrorResponse{
 			Error: dto.ErrorDetail{
 				Code:    "VALIDATION_ERROR",
 				Message: "The request contains invalid fields.",
@@ -156,7 +156,7 @@ func (h *ArticleHandler) Update(c *gin.Context) {
 		return
 	}
 	if valErrs != nil {
-		c.JSON(http.StatusUnprocessableEntity, dto.ErrorResponse{
+		c.JSON(http.StatusBadRequest, dto.ErrorResponse{
 			Error: dto.ErrorDetail{Code: "VALIDATION_ERROR", Message: "The request contains invalid fields.", Fields: valErrs},
 		})
 		return

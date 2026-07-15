@@ -56,7 +56,7 @@ func (m *MockRepo) Update(a *model.Article) error {
 func TestArticleService(t *testing.T) {
 	repo := &MockRepo{
 		articles: make(map[int64]*model.Article),
-		nextID   1,
+		nextID:   1,
 	}
 	svc := service.NewArticleService(repo)
 
