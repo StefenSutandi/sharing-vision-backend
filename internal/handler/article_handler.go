@@ -56,8 +56,8 @@ func (h *ArticleHandler) Create(c *gin.Context) {
 }
 
 func (h *ArticleHandler) List(c *gin.Context) {
-	limitStr := c.Param("limit")
-	offsetStr := c.Param("offset")
+	limitStr := c.Param("param1")
+	offsetStr := c.Param("param2")
 	status := c.Query("status")
 
 	limit, err := strconv.Atoi(limitStr)
@@ -98,7 +98,7 @@ func (h *ArticleHandler) List(c *gin.Context) {
 }
 
 func (h *ArticleHandler) GetByID(c *gin.Context) {
-	idStr := c.Param("id")
+	idStr := c.Param("param1")
 	id, err := strconv.ParseInt(idStr, 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, dto.ErrorResponse{

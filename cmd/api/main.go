@@ -40,8 +40,8 @@ func main() {
 	{
 		articleGroup.POST("/", articleHandler.Create)
 		articleGroup.POST("", articleHandler.Create)
-		articleGroup.GET("/:limit/:offset", articleHandler.List)
-		articleGroup.GET("/:id", articleHandler.GetByID)
+		articleGroup.GET("/:param1/:param2", articleHandler.List)
+		articleGroup.GET("/:param1", articleHandler.GetByID)
 		articleGroup.PUT("/:id", articleHandler.Update)
 		articleGroup.DELETE("/:id", articleHandler.Delete)
 	}

@@ -81,8 +81,8 @@ func setupRouter() (*gin.Engine, *MockService) {
 	h := handler.NewArticleHandler(svc)
 
 	router.POST("/article/", h.Create)
-	router.GET("/article/:limit/:offset", h.List)
-	router.GET("/article/:id", h.GetByID)
+	router.GET("/article/:param1/:param2", h.List)
+	router.GET("/article/:param1", h.GetByID)
 	router.PUT("/article/:id", h.Update)
 	router.DELETE("/article/:id", h.Delete)
 
