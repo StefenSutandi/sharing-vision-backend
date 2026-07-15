@@ -1,0 +1,938 @@
+go-validation	Set up job	﻿2026-07-15T10:46:38.5537907Z Current runner version: '2.335.1'
+go-validation	Set up job	2026-07-15T10:46:38.5565768Z ##[group]Runner Image Provisioner
+go-validation	Set up job	2026-07-15T10:46:38.5566931Z Hosted Compute Agent
+go-validation	Set up job	2026-07-15T10:46:38.5567598Z Version: 20260624.560
+go-validation	Set up job	2026-07-15T10:46:38.5568243Z Commit: 925d229a51159bc391ae97e54a2dd1fe20af789d
+go-validation	Set up job	2026-07-15T10:46:38.5568961Z Build Date: 2026-06-24T18:26:47Z
+go-validation	Set up job	2026-07-15T10:46:38.5569691Z Worker ID: {c7794aab-cc12-422a-99a1-6df74222f2b2}
+go-validation	Set up job	2026-07-15T10:46:38.5570429Z Azure Region: westus
+go-validation	Set up job	2026-07-15T10:46:38.5570973Z ##[endgroup]
+go-validation	Set up job	2026-07-15T10:46:38.5572582Z ##[group]Operating System
+go-validation	Set up job	2026-07-15T10:46:38.5573226Z Ubuntu
+go-validation	Set up job	2026-07-15T10:46:38.5573849Z 24.04.4
+go-validation	Set up job	2026-07-15T10:46:38.5574325Z LTS
+go-validation	Set up job	2026-07-15T10:46:38.5575195Z ##[endgroup]
+go-validation	Set up job	2026-07-15T10:46:38.5575869Z ##[group]Runner Image
+go-validation	Set up job	2026-07-15T10:46:38.5576501Z Image: ubuntu-24.04
+go-validation	Set up job	2026-07-15T10:46:38.5577100Z Version: 20260705.232.1
+go-validation	Set up job	2026-07-15T10:46:38.5578195Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260705.232/images/ubuntu/Ubuntu2404-Readme.md
+go-validation	Set up job	2026-07-15T10:46:38.5579947Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260705.232
+go-validation	Set up job	2026-07-15T10:46:38.5580888Z ##[endgroup]
+go-validation	Set up job	2026-07-15T10:46:38.5582020Z ##[group]GITHUB_TOKEN Permissions
+go-validation	Set up job	2026-07-15T10:46:38.5584255Z Contents: read
+go-validation	Set up job	2026-07-15T10:46:38.5585450Z Metadata: read
+go-validation	Set up job	2026-07-15T10:46:38.5586153Z ##[endgroup]
+go-validation	Set up job	2026-07-15T10:46:38.5588354Z Secret source: Actions
+go-validation	Set up job	2026-07-15T10:46:38.5589413Z Prepare workflow directory
+go-validation	Set up job	2026-07-15T10:46:38.5950273Z Prepare all required actions
+go-validation	Set up job	2026-07-15T10:46:38.5991026Z Getting action download info
+go-validation	Set up job	2026-07-15T10:46:39.0226446Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+go-validation	Set up job	2026-07-15T10:46:39.1012585Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+go-validation	Set up job	2026-07-15T10:46:39.6939943Z Complete job name: go-validation
+go-validation	Run actions/checkout@v4	﻿2026-07-15T10:46:39.7795757Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7805394Z ##[group]Run actions/checkout@v4
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7806284Z with:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7806850Z   repository: StefenSutandi/sharing-vision-backend
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7811158Z   token: ***
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7811634Z   ssh-strict: true
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7812101Z   ssh-user: git
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7812581Z   persist-credentials: true
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7813113Z   clean: true
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7813589Z   sparse-checkout-cone-mode: true
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7814150Z   fetch-depth: 1
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7814611Z   fetch-tags: false
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7815318Z   show-progress: true
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7815824Z   lfs: false
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7816294Z   submodules: false
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7816854Z   set-safe-directory: true
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.7817666Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.8875258Z Syncing repository: StefenSutandi/sharing-vision-backend
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.8878578Z ##[group]Getting Git version info
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.8880363Z Working directory is '/home/runner/work/sharing-vision-backend/sharing-vision-backend'
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.8882575Z [command]/usr/bin/git version
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.8961162Z git version 2.54.0
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.8986474Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9003945Z Temporarily overriding HOME='/home/runner/work/_temp/caf2e6e5-f80d-4643-83ca-4386e6f73fa3' before making global git config changes
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9006125Z Adding repository directory to the temporary git global config as a safe directory
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9012899Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sharing-vision-backend/sharing-vision-backend
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9073609Z Deleting the contents of '/home/runner/work/sharing-vision-backend/sharing-vision-backend'
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9078346Z ##[group]Initializing the repository
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9085196Z [command]/usr/bin/git init /home/runner/work/sharing-vision-backend/sharing-vision-backend
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9182080Z hint: Using 'master' as the name for the initial branch. This default branch name
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9187018Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9188787Z hint: to use in all of your new repositories, which will suppress this warning,
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9190146Z hint: call:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9190857Z hint:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9191731Z hint: 	git config --global init.defaultBranch <name>
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9192806Z hint:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9193796Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9195654Z hint: 'development'. The just-created branch can be renamed via this command:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9196977Z hint:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9197680Z hint: 	git branch -m <name>
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9198589Z hint:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9199669Z hint: Disable this message with "git config set advice.defaultBranchName false"
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9201759Z Initialized empty Git repository in /home/runner/work/sharing-vision-backend/sharing-vision-backend/.git/
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9208236Z [command]/usr/bin/git remote add origin https://github.com/StefenSutandi/sharing-vision-backend
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9256453Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9257837Z ##[group]Disabling automatic garbage collection
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9261060Z [command]/usr/bin/git config --local gc.auto 0
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9296096Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9297396Z ##[group]Setting up auth
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9303556Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9345946Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9728014Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:39.9767304Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.0020415Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.0059618Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.0291647Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.0332873Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.0333962Z ##[group]Fetching the repository
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.0343513Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +cc7314e5128ae44b3665575c1bbf310557cbbb49:refs/remotes/origin/main
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4169460Z From https://github.com/StefenSutandi/sharing-vision-backend
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4172427Z  * [new ref]         cc7314e5128ae44b3665575c1bbf310557cbbb49 -> origin/main
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4210064Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4211464Z ##[group]Determining the checkout info
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4213150Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4219027Z [command]/usr/bin/git sparse-checkout disable
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4271192Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4305094Z ##[group]Checking out the ref
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4308856Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4381035Z Switched to a new branch 'main'
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4384174Z branch 'main' set up to track 'origin/main'.
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4392480Z ##[endgroup]
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4443620Z [command]/usr/bin/git log -1 --format=%H
+go-validation	Run actions/checkout@v4	2026-07-15T10:46:40.4474066Z cc7314e5128ae44b3665575c1bbf310557cbbb49
+go-validation	Set up Go	﻿2026-07-15T10:46:40.4840994Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+go-validation	Set up Go	2026-07-15T10:46:40.4847672Z ##[group]Run actions/setup-go@v5
+go-validation	Set up Go	2026-07-15T10:46:40.4848884Z with:
+go-validation	Set up Go	2026-07-15T10:46:40.4849806Z   go-version: 1.22
+go-validation	Set up Go	2026-07-15T10:46:40.4850830Z   check-latest: false
+go-validation	Set up Go	2026-07-15T10:46:40.4861298Z   token: ***
+go-validation	Set up Go	2026-07-15T10:46:40.4862261Z   cache: true
+go-validation	Set up Go	2026-07-15T10:46:40.4863183Z ##[endgroup]
+go-validation	Set up Go	2026-07-15T10:46:40.6191202Z Setup go version spec 1.22
+go-validation	Set up Go	2026-07-15T10:46:40.6452782Z Attempting to download 1.22...
+go-validation	Set up Go	2026-07-15T10:46:40.6630814Z (node:2305) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+go-validation	Set up Go	2026-07-15T10:46:40.6635034Z (Use `node --trace-deprecation ...` to show where the warning was created)
+go-validation	Set up Go	2026-07-15T10:46:41.3092750Z matching 1.22...
+go-validation	Set up Go	2026-07-15T10:46:41.3153394Z Acquiring 1.22.12 from https://github.com/actions/go-versions/releases/download/1.22.12-13149489080/go-1.22.12-linux-x64.tar.gz
+go-validation	Set up Go	2026-07-15T10:46:41.9211937Z Extracting Go...
+go-validation	Set up Go	2026-07-15T10:46:41.9347076Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/68d71594-beca-4c2c-8ade-111d88611941 -f /home/runner/work/_temp/e4db2352-ca4c-4ceb-bbff-df48df9b5326
+go-validation	Set up Go	2026-07-15T10:46:43.5321016Z Successfully extracted go to /home/runner/work/_temp/68d71594-beca-4c2c-8ade-111d88611941
+go-validation	Set up Go	2026-07-15T10:46:43.5321958Z Adding to the cache ...
+go-validation	Set up Go	2026-07-15T10:46:48.5418973Z Successfully cached go to /opt/hostedtoolcache/go/1.22.12/x64
+go-validation	Set up Go	2026-07-15T10:46:48.5421700Z Added go to the path
+go-validation	Set up Go	2026-07-15T10:46:48.5425170Z Successfully set up Go version 1.22
+go-validation	Set up Go	2026-07-15T10:46:48.5746253Z [command]/opt/hostedtoolcache/go/1.22.12/x64/bin/go env GOMODCACHE
+go-validation	Set up Go	2026-07-15T10:46:48.5747838Z [command]/opt/hostedtoolcache/go/1.22.12/x64/bin/go env GOCACHE
+go-validation	Set up Go	2026-07-15T10:46:48.5762213Z /home/runner/go/pkg/mod
+go-validation	Set up Go	2026-07-15T10:46:48.5790984Z /home/runner/.cache/go-build
+go-validation	Set up Go	2026-07-15T10:46:48.8336557Z Cache is not found
+go-validation	Set up Go	2026-07-15T10:46:48.8361569Z go version go1.22.12 linux/amd64
+go-validation	Set up Go	2026-07-15T10:46:48.8361965Z 
+go-validation	Set up Go	2026-07-15T10:46:48.8362532Z ##[group]go env
+go-validation	Set up Go	2026-07-15T10:46:48.9659679Z GO111MODULE=''
+go-validation	Set up Go	2026-07-15T10:46:48.9660225Z GOARCH='amd64'
+go-validation	Set up Go	2026-07-15T10:46:48.9660586Z GOBIN=''
+go-validation	Set up Go	2026-07-15T10:46:48.9660954Z GOCACHE='/home/runner/.cache/go-build'
+go-validation	Set up Go	2026-07-15T10:46:48.9661443Z GOENV='/home/runner/.config/go/env'
+go-validation	Set up Go	2026-07-15T10:46:48.9661897Z GOEXE=''
+go-validation	Set up Go	2026-07-15T10:46:48.9662218Z GOEXPERIMENT=''
+go-validation	Set up Go	2026-07-15T10:46:48.9662553Z GOFLAGS=''
+go-validation	Set up Go	2026-07-15T10:46:48.9662934Z GOHOSTARCH='amd64'
+go-validation	Set up Go	2026-07-15T10:46:48.9663301Z GOHOSTOS='linux'
+go-validation	Set up Go	2026-07-15T10:46:48.9663659Z GOINSECURE=''
+go-validation	Set up Go	2026-07-15T10:46:48.9664063Z GOMODCACHE='/home/runner/go/pkg/mod'
+go-validation	Set up Go	2026-07-15T10:46:48.9664568Z GONOPROXY=''
+go-validation	Set up Go	2026-07-15T10:46:48.9665290Z GONOSUMDB=''
+go-validation	Set up Go	2026-07-15T10:46:48.9665686Z GOOS='linux'
+go-validation	Set up Go	2026-07-15T10:46:48.9666099Z GOPATH='/home/runner/go'
+go-validation	Set up Go	2026-07-15T10:46:48.9666522Z GOPRIVATE=''
+go-validation	Set up Go	2026-07-15T10:46:48.9667165Z GOPROXY='https://proxy.golang.org,direct'
+go-validation	Set up Go	2026-07-15T10:46:48.9667719Z GOROOT='/opt/hostedtoolcache/go/1.22.12/x64'
+go-validation	Set up Go	2026-07-15T10:46:48.9668229Z GOSUMDB='sum.golang.org'
+go-validation	Set up Go	2026-07-15T10:46:48.9668605Z GOTMPDIR=''
+go-validation	Set up Go	2026-07-15T10:46:48.9669143Z GOTOOLCHAIN='auto'
+go-validation	Set up Go	2026-07-15T10:46:48.9669676Z GOTOOLDIR='/opt/hostedtoolcache/go/1.22.12/x64/pkg/tool/linux_amd64'
+go-validation	Set up Go	2026-07-15T10:46:48.9670339Z GOVCS=''
+go-validation	Set up Go	2026-07-15T10:46:48.9670679Z GOVERSION='go1.22.12'
+go-validation	Set up Go	2026-07-15T10:46:48.9671055Z GCCGO='gccgo'
+go-validation	Set up Go	2026-07-15T10:46:48.9671421Z GOAMD64='v1'
+go-validation	Set up Go	2026-07-15T10:46:48.9671731Z AR='ar'
+go-validation	Set up Go	2026-07-15T10:46:48.9672020Z CC='gcc'
+go-validation	Set up Go	2026-07-15T10:46:48.9672306Z CXX='g++'
+go-validation	Set up Go	2026-07-15T10:46:48.9672609Z CGO_ENABLED='1'
+go-validation	Set up Go	2026-07-15T10:46:48.9673184Z GOMOD='/home/runner/work/sharing-vision-backend/sharing-vision-backend/go.mod'
+go-validation	Set up Go	2026-07-15T10:46:48.9673834Z GOWORK=''
+go-validation	Set up Go	2026-07-15T10:46:48.9674143Z CGO_CFLAGS='-O2 -g'
+go-validation	Set up Go	2026-07-15T10:46:48.9675128Z CGO_CPPFLAGS=''
+go-validation	Set up Go	2026-07-15T10:46:48.9675718Z CGO_CXXFLAGS='-O2 -g'
+go-validation	Set up Go	2026-07-15T10:46:48.9676077Z CGO_FFLAGS='-O2 -g'
+go-validation	Set up Go	2026-07-15T10:46:48.9676411Z CGO_LDFLAGS='-O2 -g'
+go-validation	Set up Go	2026-07-15T10:46:48.9676775Z PKG_CONFIG='pkg-config'
+go-validation	Set up Go	2026-07-15T10:46:48.9677879Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2783436911=/tmp/go-build -gno-record-gcc-switches'
+go-validation	Set up Go	2026-07-15T10:46:48.9678854Z 
+go-validation	Set up Go	2026-07-15T10:46:48.9679342Z ##[endgroup]
+go-validation	Verify Go version	﻿2026-07-15T10:46:48.9894735Z ##[group]Run go version
+go-validation	Verify Go version	2026-07-15T10:46:48.9895673Z ^[[36;1mgo version^[[0m
+go-validation	Verify Go version	2026-07-15T10:46:49.0050559Z shell: /usr/bin/bash -e {0}
+go-validation	Verify Go version	2026-07-15T10:46:49.0050944Z ##[endgroup]
+go-validation	Verify Go version	2026-07-15T10:46:49.0157421Z go version go1.22.12 linux/amd64
+go-validation	Download dependencies	﻿2026-07-15T10:46:49.0199367Z ##[group]Run go mod download
+go-validation	Download dependencies	2026-07-15T10:46:49.0199724Z ^[[36;1mgo mod download^[[0m
+go-validation	Download dependencies	2026-07-15T10:46:49.0235344Z shell: /usr/bin/bash -e {0}
+go-validation	Download dependencies	2026-07-15T10:46:49.0235637Z ##[endgroup]
+go-validation	Verify modules	﻿2026-07-15T10:46:50.5631808Z ##[group]Run go mod verify
+go-validation	Verify modules	2026-07-15T10:46:50.5632154Z ^[[36;1mgo mod verify^[[0m
+go-validation	Verify modules	2026-07-15T10:46:50.5664291Z shell: /usr/bin/bash -e {0}
+go-validation	Verify modules	2026-07-15T10:46:50.5664554Z ##[endgroup]
+go-validation	Verify modules	2026-07-15T10:46:51.2685635Z all modules verified
+go-validation	Tidy modules	﻿2026-07-15T10:46:51.2731040Z ##[group]Run go mod tidy
+go-validation	Tidy modules	2026-07-15T10:46:51.2731357Z ^[[36;1mgo mod tidy^[[0m
+go-validation	Tidy modules	2026-07-15T10:46:51.2763288Z shell: /usr/bin/bash -e {0}
+go-validation	Tidy modules	2026-07-15T10:46:51.2763555Z ##[endgroup]
+go-validation	Tidy modules	2026-07-15T10:46:51.3486417Z go: downloading github.com/stretchr/testify v1.8.4
+go-validation	Tidy modules	2026-07-15T10:46:51.4053462Z go: downloading github.com/go-playground/assert/v2 v2.2.0
+go-validation	Tidy modules	2026-07-15T10:46:51.5163798Z go: downloading github.com/google/go-cmp v0.5.5
+go-validation	Tidy modules	2026-07-15T10:46:51.5209179Z go: downloading github.com/davecgh/go-spew v1.1.1
+go-validation	Tidy modules	2026-07-15T10:46:51.5252522Z go: downloading github.com/pmezard/go-difflib v1.0.0
+go-validation	Tidy modules	2026-07-15T10:46:51.5382293Z go: downloading gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
+go-validation	Tidy modules	2026-07-15T10:46:51.5498739Z go: downloading golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
+go-validation	Tidy modules	2026-07-15T10:46:51.5600486Z go: downloading github.com/kr/pretty v0.3.0
+go-validation	Tidy modules	2026-07-15T10:46:51.5674252Z go: downloading github.com/rogpeppe/go-internal v1.8.0
+go-validation	Check for unmodified go.mod and go.sum	﻿2026-07-15T10:46:51.6093653Z ##[group]Run git diff --exit-code -- go.mod go.sum
+go-validation	Check for unmodified go.mod and go.sum	2026-07-15T10:46:51.6094094Z ^[[36;1mgit diff --exit-code -- go.mod go.sum^[[0m
+go-validation	Check for unmodified go.mod and go.sum	2026-07-15T10:46:51.6127242Z shell: /usr/bin/bash -e {0}
+go-validation	Check for unmodified go.mod and go.sum	2026-07-15T10:46:51.6127531Z ##[endgroup]
+go-validation	Check Formatting	﻿2026-07-15T10:46:51.6230531Z ##[group]Run UNFORMATTED="$(gofmt -l .)"
+go-validation	Check Formatting	2026-07-15T10:46:51.6230906Z ^[[36;1mUNFORMATTED="$(gofmt -l .)"^[[0m
+go-validation	Check Formatting	2026-07-15T10:46:51.6231186Z ^[[36;1mif [ -n "$UNFORMATTED" ]; then^[[0m
+go-validation	Check Formatting	2026-07-15T10:46:51.6231514Z ^[[36;1m  echo "The following Go files require formatting:"^[[0m
+go-validation	Check Formatting	2026-07-15T10:46:51.6231842Z ^[[36;1m  echo "$UNFORMATTED"^[[0m
+go-validation	Check Formatting	2026-07-15T10:46:51.6232069Z ^[[36;1m  exit 1^[[0m
+go-validation	Check Formatting	2026-07-15T10:46:51.6232252Z ^[[36;1mfi^[[0m
+go-validation	Check Formatting	2026-07-15T10:46:51.6264249Z shell: /usr/bin/bash -e {0}
+go-validation	Check Formatting	2026-07-15T10:46:51.6264510Z ##[endgroup]
+go-validation	Check Formatting	2026-07-15T10:46:51.6380121Z The following Go files require formatting:
+go-validation	Check Formatting	2026-07-15T10:46:51.6380868Z internal/service/article_service_test.go
+go-validation	Check Formatting	2026-07-15T10:46:51.6394001Z ##[error]Process completed with exit code 1.
+go-validation	Post Run actions/checkout@v4	﻿2026-07-15T10:46:51.6550478Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.6551731Z Post job cleanup.
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7445313Z [command]/usr/bin/git version
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7491302Z git version 2.54.0
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7544540Z Temporarily overriding HOME='/home/runner/work/_temp/def911ce-8dcc-4c8d-850a-69d68e89eacc' before making global git config changes
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7546382Z Adding repository directory to the temporary git global config as a safe directory
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7547850Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sharing-vision-backend/sharing-vision-backend
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7588808Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7630606Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7898130Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7939216Z http.https://github.com/.extraheader
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.7963327Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.8001152Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.8302835Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+go-validation	Post Run actions/checkout@v4	2026-07-15T10:46:51.8348849Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+go-validation	Complete job	﻿2026-07-15T10:46:51.8743108Z Cleaning up orphan processes
+go-validation	Complete job	2026-07-15T10:46:51.9013311Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-go@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+docker-validation	Set up job	﻿2026-07-15T10:46:36.5528744Z Current runner version: '2.335.1'
+docker-validation	Set up job	2026-07-15T10:46:36.5563287Z ##[group]Runner Image Provisioner
+docker-validation	Set up job	2026-07-15T10:46:36.5564632Z Hosted Compute Agent
+docker-validation	Set up job	2026-07-15T10:46:36.5565714Z Version: 20260707.563
+docker-validation	Set up job	2026-07-15T10:46:36.5566742Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+docker-validation	Set up job	2026-07-15T10:46:36.5567864Z Build Date: 2026-07-07T19:33:50Z
+docker-validation	Set up job	2026-07-15T10:46:36.5569155Z Worker ID: {82e3e988-6111-4a94-8fbd-e8479518ecbc}
+docker-validation	Set up job	2026-07-15T10:46:36.5570316Z Azure Region: eastus
+docker-validation	Set up job	2026-07-15T10:46:36.5571252Z ##[endgroup]
+docker-validation	Set up job	2026-07-15T10:46:36.5573814Z ##[group]Operating System
+docker-validation	Set up job	2026-07-15T10:46:36.5574802Z Ubuntu
+docker-validation	Set up job	2026-07-15T10:46:36.5575790Z 24.04.4
+docker-validation	Set up job	2026-07-15T10:46:36.5576698Z LTS
+docker-validation	Set up job	2026-07-15T10:46:36.5577633Z ##[endgroup]
+docker-validation	Set up job	2026-07-15T10:46:36.5578516Z ##[group]Runner Image
+docker-validation	Set up job	2026-07-15T10:46:36.5579505Z Image: ubuntu-24.04
+docker-validation	Set up job	2026-07-15T10:46:36.5580526Z Version: 20260714.240.1
+docker-validation	Set up job	2026-07-15T10:46:36.5582328Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260714.240/images/ubuntu/Ubuntu2404-Readme.md
+docker-validation	Set up job	2026-07-15T10:46:36.5585557Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260714.240
+docker-validation	Set up job	2026-07-15T10:46:36.5587191Z ##[endgroup]
+docker-validation	Set up job	2026-07-15T10:46:36.5589109Z ##[group]GITHUB_TOKEN Permissions
+docker-validation	Set up job	2026-07-15T10:46:36.5592137Z Contents: read
+docker-validation	Set up job	2026-07-15T10:46:36.5593450Z Metadata: read
+docker-validation	Set up job	2026-07-15T10:46:36.5594367Z ##[endgroup]
+docker-validation	Set up job	2026-07-15T10:46:36.5597290Z Secret source: Actions
+docker-validation	Set up job	2026-07-15T10:46:36.5598501Z Prepare workflow directory
+docker-validation	Set up job	2026-07-15T10:46:36.6064399Z Prepare all required actions
+docker-validation	Set up job	2026-07-15T10:46:36.6119635Z Getting action download info
+docker-validation	Set up job	2026-07-15T10:46:36.7835993Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+docker-validation	Set up job	2026-07-15T10:46:36.8853688Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+docker-validation	Set up job	2026-07-15T10:46:37.0712016Z Complete job name: docker-validation
+docker-validation	Run actions/checkout@v4	﻿2026-07-15T10:46:37.1438820Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1447630Z ##[group]Run actions/checkout@v4
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1448389Z with:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1448903Z   repository: StefenSutandi/sharing-vision-backend
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1452753Z   token: ***
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1453664Z   ssh-strict: true
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1454185Z   ssh-user: git
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1454692Z   persist-credentials: true
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1455233Z   clean: true
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1455726Z   sparse-checkout-cone-mode: true
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1456305Z   fetch-depth: 1
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1456787Z   fetch-tags: false
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1457282Z   show-progress: true
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1457776Z   lfs: false
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1458238Z   submodules: false
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1458755Z   set-safe-directory: true
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.1459559Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2519991Z Syncing repository: StefenSutandi/sharing-vision-backend
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2522061Z ##[group]Getting Git version info
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2523447Z Working directory is '/home/runner/work/sharing-vision-backend/sharing-vision-backend'
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2524806Z [command]/usr/bin/git version
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2542336Z git version 2.54.0
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2598345Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2618198Z Temporarily overriding HOME='/home/runner/work/_temp/b9f64fd2-7bc9-4d4c-aedc-c761ef6d2452' before making global git config changes
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2620833Z Adding repository directory to the temporary git global config as a safe directory
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2625494Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sharing-vision-backend/sharing-vision-backend
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2676430Z Deleting the contents of '/home/runner/work/sharing-vision-backend/sharing-vision-backend'
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2680563Z ##[group]Initializing the repository
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2686595Z [command]/usr/bin/git init /home/runner/work/sharing-vision-backend/sharing-vision-backend
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2789668Z hint: Using 'master' as the name for the initial branch. This default branch name
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2791388Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2793097Z hint: to use in all of your new repositories, which will suppress this warning,
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2794287Z hint: call:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2794926Z hint:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2795765Z hint: 	git config --global init.defaultBranch <name>
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2796751Z hint:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2797697Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2799176Z hint: 'development'. The just-created branch can be renamed via this command:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2800398Z hint:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2801079Z hint: 	git branch -m <name>
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2801836Z hint:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2802800Z hint: Disable this message with "git config set advice.defaultBranchName false"
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2804939Z Initialized empty Git repository in /home/runner/work/sharing-vision-backend/sharing-vision-backend/.git/
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2809630Z [command]/usr/bin/git remote add origin https://github.com/StefenSutandi/sharing-vision-backend
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2869600Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2870849Z ##[group]Disabling automatic garbage collection
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2874959Z [command]/usr/bin/git config --local gc.auto 0
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2906886Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2908020Z ##[group]Setting up auth
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2915189Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.2965618Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3318567Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3354541Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3579844Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3614438Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3836503Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3875148Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3875999Z ##[group]Fetching the repository
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.3885117Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +cc7314e5128ae44b3665575c1bbf310557cbbb49:refs/remotes/origin/main
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5672221Z From https://github.com/StefenSutandi/sharing-vision-backend
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5674171Z  * [new ref]         cc7314e5128ae44b3665575c1bbf310557cbbb49 -> origin/main
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5717285Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5718419Z ##[group]Determining the checkout info
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5720981Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5730495Z [command]/usr/bin/git sparse-checkout disable
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5785070Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5843853Z ##[group]Checking out the ref
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5845514Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5923897Z Switched to a new branch 'main'
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5927286Z branch 'main' set up to track 'origin/main'.
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5934017Z ##[endgroup]
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.5993650Z [command]/usr/bin/git log -1 --format=%H
+docker-validation	Run actions/checkout@v4	2026-07-15T10:46:37.6022703Z cc7314e5128ae44b3665575c1bbf310557cbbb49
+docker-validation	Start Docker Compose	﻿2026-07-15T10:46:37.6248230Z ##[group]Run docker compose down -v --remove-orphans
+docker-validation	Start Docker Compose	2026-07-15T10:46:37.6249237Z ^[[36;1mdocker compose down -v --remove-orphans^[[0m
+docker-validation	Start Docker Compose	2026-07-15T10:46:37.6249888Z ^[[36;1mdocker compose build --no-cache^[[0m
+docker-validation	Start Docker Compose	2026-07-15T10:46:37.6250452Z ^[[36;1mdocker compose up -d^[[0m
+docker-validation	Start Docker Compose	2026-07-15T10:46:37.6330442Z shell: /usr/bin/bash -e {0}
+docker-validation	Start Docker Compose	2026-07-15T10:46:37.6330995Z ##[endgroup]
+docker-validation	Start Docker Compose	2026-07-15T10:46:37.8951676Z time="2026-07-15T10:46:37Z" level=warning msg="/home/runner/work/sharing-vision-backend/sharing-vision-backend/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+docker-validation	Start Docker Compose	2026-07-15T10:46:37.9662422Z time="2026-07-15T10:46:37Z" level=warning msg="/home/runner/work/sharing-vision-backend/sharing-vision-backend/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.1953387Z #1 [internal] load local bake definitions
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3007724Z #1 reading from stdin 459B done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3008915Z #1 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3009427Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3009735Z #2 [internal] load build definition from Dockerfile
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3010464Z #2 transferring dockerfile: 348B done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3011101Z #2 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3011381Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.3011824Z #3 [internal] load metadata for docker.io/library/golang:1.22-alpine
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.5197675Z #3 ...
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.5198651Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.5199405Z #4 [auth] library/golang:pull token for registry-1.docker.io
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.5200317Z #4 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.5200579Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.5200862Z #5 [auth] library/alpine:pull token for registry-1.docker.io
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.5201288Z #5 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.6344114Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.6344774Z #6 [internal] load metadata for docker.io/library/alpine:latest
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.6345316Z #6 DONE 0.3s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.6345476Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.6345698Z #3 [internal] load metadata for docker.io/library/golang:1.22-alpine
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8493970Z #3 DONE 0.4s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8494942Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8495147Z #7 [internal] load .dockerignore
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8495584Z #7 transferring context: 2B done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8495950Z #7 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8496110Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8496585Z #8 [stage-1 1/5] FROM docker.io/library/alpine:latest@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8497556Z #8 resolve docker.io/library/alpine:latest@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8498368Z #8 sha256:d529dd0c6e5597ac7e4a3e2dea65c3fcc6173f4cae713c409265c1dd9914a11b 611B / 611B done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8499087Z #8 sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b 9.22kB / 9.22kB done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8499937Z #8 sha256:79ff19e9084a00eece421b2523fb93e22d730e2c0e525905de047e848e56d95f 1.02kB / 1.02kB done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8500440Z #8 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8500620Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8500744Z #9 [internal] load build context
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8501558Z #9 transferring context: 113.93kB 0.0s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8502374Z #9 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8502825Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8503882Z #10 [builder 1/6] FROM docker.io/library/golang:1.22-alpine@sha256:1699c10032ca2582ec89a24a1312d986a3f094aed3d5c1147b19880afe40e052
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8504909Z #10 resolve docker.io/library/golang:1.22-alpine@sha256:1699c10032ca2582ec89a24a1312d986a3f094aed3d5c1147b19880afe40e052 done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8791647Z #10 sha256:4d75fd4b73869ed224045c010cdec78756eefb6752a5a8e4804294009eac11e9 294.90kB / 294.90kB 0.2s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8794068Z #10 sha256:afa154b433c7f72db064d19e1bcfa84ee196ad29120328f6bdb2c5fbd7b8eeac 1.05MB / 69.36MB 0.2s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8795848Z #10 sha256:1699c10032ca2582ec89a24a1312d986a3f094aed3d5c1147b19880afe40e052 10.30kB / 10.30kB done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8797184Z #10 sha256:6d405dfc5fdf3a45df1529cf060b920041f52ce523487e0f36f02765af294a51 1.92kB / 1.92kB done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8799092Z #10 sha256:4129f51f28c9ae5de799b958ba2aaa8f92f26cc7bf47c107891673fe4b516c03 2.08kB / 2.08kB done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.8800404Z #10 sha256:1f3e46996e2966e4faa5846e56e76e3748b7315e2ded61476c24403d592134f0 3.64MB / 3.64MB 0.2s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.9785926Z #10 sha256:4d75fd4b73869ed224045c010cdec78756eefb6752a5a8e4804294009eac11e9 294.90kB / 294.90kB 0.2s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.9787117Z #10 sha256:afa154b433c7f72db064d19e1bcfa84ee196ad29120328f6bdb2c5fbd7b8eeac 32.51MB / 69.36MB 0.3s
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.9788332Z #10 sha256:1f3e46996e2966e4faa5846e56e76e3748b7315e2ded61476c24403d592134f0 3.64MB / 3.64MB 0.2s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:38.9789016Z #10 extracting sha256:1f3e46996e2966e4faa5846e56e76e3748b7315e2ded61476c24403d592134f0
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.1841254Z #10 sha256:afa154b433c7f72db064d19e1bcfa84ee196ad29120328f6bdb2c5fbd7b8eeac 55.57MB / 69.36MB 0.5s
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.3675594Z #10 sha256:afa154b433c7f72db064d19e1bcfa84ee196ad29120328f6bdb2c5fbd7b8eeac 69.36MB / 69.36MB 0.7s
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.3677547Z #10 sha256:5f837c998576dcb54bc285997f33fcc2166dff6aa48fe3a374da92474efd5fe8 0B / 126B 0.7s
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.4787365Z #10 sha256:afa154b433c7f72db064d19e1bcfa84ee196ad29120328f6bdb2c5fbd7b8eeac 69.36MB / 69.36MB 0.7s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.4788804Z #10 extracting sha256:1f3e46996e2966e4faa5846e56e76e3748b7315e2ded61476c24403d592134f0 0.5s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.4789755Z #10 sha256:5f837c998576dcb54bc285997f33fcc2166dff6aa48fe3a374da92474efd5fe8 126B / 126B 0.7s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.4790413Z #10 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.7s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:39.7166055Z #10 extracting sha256:4d75fd4b73869ed224045c010cdec78756eefb6752a5a8e4804294009eac11e9 0.1s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:40.2324743Z #10 ...
+docker-validation	Start Docker Compose	2026-07-15T10:46:40.2325084Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:40.2325316Z #11 [stage-1 2/5] WORKDIR /app
+docker-validation	Start Docker Compose	2026-07-15T10:46:40.2325946Z #11 DONE 1.5s
+docker-validation	Start Docker Compose	2026-07-15T10:46:40.3555653Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:40.3556677Z #10 [builder 1/6] FROM docker.io/library/golang:1.22-alpine@sha256:1699c10032ca2582ec89a24a1312d986a3f094aed3d5c1147b19880afe40e052
+docker-validation	Start Docker Compose	2026-07-15T10:46:40.3557985Z #10 extracting sha256:afa154b433c7f72db064d19e1bcfa84ee196ad29120328f6bdb2c5fbd7b8eeac 0.1s
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.1388309Z #10 extracting sha256:afa154b433c7f72db064d19e1bcfa84ee196ad29120328f6bdb2c5fbd7b8eeac 3.9s done
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.7568464Z #10 extracting sha256:5f837c998576dcb54bc285997f33fcc2166dff6aa48fe3a374da92474efd5fe8
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9634734Z #10 extracting sha256:5f837c998576dcb54bc285997f33fcc2166dff6aa48fe3a374da92474efd5fe8 done
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9636404Z #10 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9637629Z #10 DONE 6.1s
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9637839Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9638423Z #12 [builder 2/6] WORKDIR /app
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9638930Z #12 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9639142Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9639328Z #13 [builder 3/6] COPY go.mod go.sum ./
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9639916Z #13 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9640219Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:44.9640377Z #14 [builder 4/6] RUN go mod download
+docker-validation	Start Docker Compose	2026-07-15T10:46:47.1364481Z #14 DONE 2.3s
+docker-validation	Start Docker Compose	2026-07-15T10:46:47.3279040Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:47.3279878Z #15 [builder 5/6] COPY . .
+docker-validation	Start Docker Compose	2026-07-15T10:46:47.3280608Z #15 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:46:47.3303394Z 
+docker-validation	Start Docker Compose	2026-07-15T10:46:47.3304134Z #16 [builder 6/6] RUN CGO_ENABLED=0 GOOS=linux go build -o /app/api ./cmd/api
+docker-validation	Start Docker Compose	2026-07-15T10:47:01.8536291Z #16 DONE 14.7s
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0106861Z 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0107424Z #17 [stage-1 3/5] COPY --from=builder /app/api .
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0108238Z #17 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0108616Z 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0108829Z #18 [stage-1 4/5] COPY .env.example .env
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0109285Z #18 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0109482Z 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0109671Z #19 [stage-1 5/5] COPY migrations ./migrations
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0110144Z #19 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0110339Z 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0110478Z #20 exporting to image
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0110855Z #20 exporting layers 0.1s done
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0387613Z #20 writing image sha256:6b186f6adc36a10426f359852ca8b2b8a1d583d4e31c5168928c42db647b3181 done
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0388623Z #20 naming to docker.io/library/sharing-vision-backend-api done
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0389212Z #20 DONE 0.1s
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0389451Z 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0389624Z #21 resolving provenance for metadata file
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0390131Z #21 DONE 0.0s
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.0390686Z  api  Built
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.1058109Z time="2026-07-15T10:47:02Z" level=warning msg="/home/runner/work/sharing-vision-backend/sharing-vision-backend/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.1095855Z  migrate Pulling 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.1096454Z  mysql Pulling 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4088630Z  8a49fdb3b6a5 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4089171Z  1d176f235b68 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4089497Z  1f91cafd6e76 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4089784Z  4766be0e7392 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4090013Z  586322a68347 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4090236Z  4766be0e7392 Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4090545Z  586322a68347 Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4708436Z  1d176f235b68 Downloading [>                                                  ]  3.458kB/284.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4728854Z  1f91cafd6e76 Downloading [>                                                  ]  162.8kB/15.33MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4743134Z  8a49fdb3b6a5 Downloading [>                                                  ]  48.51kB/3.397MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4764677Z  1d176f235b68 Downloading [==================================================>]  284.6kB/284.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4765752Z  1d176f235b68 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4975295Z  8a49fdb3b6a5 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4976409Z  8a49fdb3b6a5 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.4990721Z  8a49fdb3b6a5 Extracting [>                                                  ]  65.54kB/3.397MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5057924Z  4766be0e7392 Downloading [==================================================>]     155B/155B
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5063815Z  4766be0e7392 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5064841Z  4766be0e7392 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5265518Z  586322a68347 Downloading [==================================================>]     108B/108B
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5267154Z  586322a68347 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5267634Z  586322a68347 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5360671Z  1f91cafd6e76 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5361495Z  1f91cafd6e76 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5699561Z  8a49fdb3b6a5 Extracting [==================================================>]  3.397MB/3.397MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.5736371Z  8a49fdb3b6a5 Extracting [==================================================>]  3.397MB/3.397MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.6120984Z  8a49fdb3b6a5 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.6142060Z  1d176f235b68 Extracting [=====>                                             ]  32.77kB/284.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.6526845Z  1d176f235b68 Extracting [==================================================>]  284.6kB/284.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.6602011Z  1d176f235b68 Extracting [==================================================>]  284.6kB/284.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.7108114Z  1d176f235b68 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.7128871Z  1f91cafd6e76 Extracting [>                                                  ]  163.8kB/15.33MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8013374Z  edf85873f64e Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8016943Z  6ef6c7b50a93 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8017438Z  e3e5d1ac74c1 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8018119Z  0d74d296605b Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8018533Z  297d04cfe470 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8019163Z  4c8a3e0d4e4b Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8019474Z  a63160a5eda1 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8019710Z  7534d1db9f8d Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8019953Z  49ec2dab01d9 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8021128Z  ab24264a27e9 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8021588Z  96d30d9fbee8 Pulling fs layer 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8022030Z  0d74d296605b Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8022447Z  297d04cfe470 Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8023018Z  4c8a3e0d4e4b Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8023467Z  a63160a5eda1 Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8023882Z  7534d1db9f8d Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8024249Z  49ec2dab01d9 Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8024614Z  ab24264a27e9 Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8024997Z  96d30d9fbee8 Waiting 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8146700Z  1f91cafd6e76 Extracting [========================>                          ]  7.373MB/15.33MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8274102Z  6ef6c7b50a93 Downloading [==================================================>]     884B/884B
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8275527Z  6ef6c7b50a93 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8276895Z  6ef6c7b50a93 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8331595Z  e3e5d1ac74c1 Downloading [=>                                                 ]  15.75kB/783.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8360773Z  edf85873f64e Downloading [>                                                  ]  474.5kB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8484710Z  e3e5d1ac74c1 Downloading [==================================================>]  783.6kB/783.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8490457Z  e3e5d1ac74c1 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8490955Z  e3e5d1ac74c1 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8586859Z  0d74d296605b Downloading [>                                                  ]   64.9kB/6.173MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8765065Z  297d04cfe470 Downloading [==================================================>]  2.607kB/2.607kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8765908Z  297d04cfe470 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8767102Z  297d04cfe470 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8902754Z  0d74d296605b Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.8903725Z  0d74d296605b Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9071652Z  4c8a3e0d4e4b Downloading [==================================================>]     335B/335B
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9072571Z  4c8a3e0d4e4b Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9073451Z  4c8a3e0d4e4b Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9208986Z  1f91cafd6e76 Extracting [===================================>               ]  10.81MB/15.33MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9258643Z  a63160a5eda1 Downloading [>                                                  ]  507.3kB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9372095Z  7534d1db9f8d Downloading [==================================================>]     316B/316B
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9383623Z  7534d1db9f8d Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9384081Z  7534d1db9f8d Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9384590Z  edf85873f64e Downloading [=========================>                         ]  23.76MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:02.9839249Z  49ec2dab01d9 Downloading [>                                                  ]  539.9kB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0200470Z  edf85873f64e Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0202046Z  edf85873f64e Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0212464Z  1f91cafd6e76 Extracting [===============================================>   ]  14.58MB/15.33MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0332558Z  a63160a5eda1 Downloading [=========================>                         ]  25.39MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0633192Z  ab24264a27e9 Downloading [================================>                  ]  3.502kB/5.327kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0636471Z  ab24264a27e9 Downloading [==================================================>]  5.327kB/5.327kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0637222Z  ab24264a27e9 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0637917Z  ab24264a27e9 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0775748Z  1f91cafd6e76 Extracting [==================================================>]  15.33MB/15.33MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0885352Z  49ec2dab01d9 Downloading [==========>                                        ]  26.57MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.0886279Z  edf85873f64e Extracting [>                                                  ]  491.5kB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.1060501Z  96d30d9fbee8 Downloading [==================================================>]     120B/120B
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.1088679Z  96d30d9fbee8 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.1089352Z  96d30d9fbee8 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.1198196Z  a63160a5eda1 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.1199691Z  a63160a5eda1 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.1852673Z  49ec2dab01d9 Downloading [=====================>                             ]  55.25MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.1905153Z  edf85873f64e Extracting [=>                                                 ]    983kB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.2814844Z  1f91cafd6e76 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.2823687Z  4766be0e7392 Extracting [==================================================>]     155B/155B
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.2824996Z  4766be0e7392 Extracting [==================================================>]     155B/155B
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.2923773Z  49ec2dab01d9 Downloading [==================================>                ]  88.12MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.2950331Z  edf85873f64e Extracting [====>                                              ]  4.424MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.3884717Z  49ec2dab01d9 Downloading [========================================>          ]  105.7MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.4103416Z  edf85873f64e Extracting [=======>                                           ]  6.881MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.4597381Z  49ec2dab01d9 Verifying Checksum 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.4598003Z  49ec2dab01d9 Download complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.4856357Z  4766be0e7392 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.4872333Z  586322a68347 Extracting [==================================================>]     108B/108B
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.4874793Z  586322a68347 Extracting [==================================================>]     108B/108B
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.5790753Z  586322a68347 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.5851237Z  migrate Pulled 
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.6028225Z  edf85873f64e Extracting [=======>                                           ]  7.373MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.7064685Z  edf85873f64e Extracting [===============>                                   ]  14.75MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.8121793Z  edf85873f64e Extracting [========================>                          ]  23.59MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:03.9129490Z  edf85873f64e Extracting [=================================>                 ]  31.46MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.0136970Z  edf85873f64e Extracting [=====================================>             ]  35.39MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.1207766Z  edf85873f64e Extracting [============================================>      ]  42.27MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.5061536Z  edf85873f64e Extracting [==============================================>    ]  44.24MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.5521391Z  edf85873f64e Extracting [==================================================>]  47.31MB/47.31MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.5636609Z  edf85873f64e Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.5647263Z  6ef6c7b50a93 Extracting [==================================================>]     884B/884B
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.5650034Z  6ef6c7b50a93 Extracting [==================================================>]     884B/884B
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.5792524Z  6ef6c7b50a93 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.5876868Z  e3e5d1ac74c1 Extracting [==>                                                ]  32.77kB/783.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.6242091Z  e3e5d1ac74c1 Extracting [==================================================>]  783.6kB/783.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.6252269Z  e3e5d1ac74c1 Extracting [==================================================>]  783.6kB/783.6kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.6376680Z  e3e5d1ac74c1 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.6395926Z  0d74d296605b Extracting [>                                                  ]  65.54kB/6.173MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.7421994Z  0d74d296605b Extracting [===================>                               ]  2.359MB/6.173MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8348136Z  0d74d296605b Extracting [==================================================>]  6.173MB/6.173MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8569604Z  0d74d296605b Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8583667Z  297d04cfe470 Extracting [==================================================>]  2.607kB/2.607kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8588964Z  297d04cfe470 Extracting [==================================================>]  2.607kB/2.607kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8682393Z  297d04cfe470 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8698603Z  4c8a3e0d4e4b Extracting [==================================================>]     335B/335B
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8699921Z  4c8a3e0d4e4b Extracting [==================================================>]     335B/335B
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8798388Z  4c8a3e0d4e4b Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.8919646Z  a63160a5eda1 Extracting [>                                                  ]  524.3kB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:04.9943880Z  a63160a5eda1 Extracting [======>                                            ]  6.816MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.1280850Z  a63160a5eda1 Extracting [=============>                                     ]  13.63MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.2310565Z  a63160a5eda1 Extracting [==================>                                ]  18.87MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.3366826Z  a63160a5eda1 Extracting [===========================>                       ]  27.26MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.4416742Z  a63160a5eda1 Extracting [====================================>              ]  36.18MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.5427115Z  a63160a5eda1 Extracting [===========================================>       ]  42.99MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.6437493Z  a63160a5eda1 Extracting [=================================================> ]  49.81MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.6455192Z  a63160a5eda1 Extracting [==================================================>]  49.93MB/49.93MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.7259509Z  a63160a5eda1 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.7270927Z  7534d1db9f8d Extracting [==================================================>]     316B/316B
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.7274449Z  7534d1db9f8d Extracting [==================================================>]     316B/316B
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.7343867Z  7534d1db9f8d Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.7460004Z  49ec2dab01d9 Extracting [>                                                  ]  557.1kB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.8483390Z  49ec2dab01d9 Extracting [===>                                               ]  8.913MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:05.9526091Z  49ec2dab01d9 Extracting [=====>                                             ]  13.93MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:06.0647419Z  49ec2dab01d9 Extracting [=======>                                           ]   19.5MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:06.1706145Z  49ec2dab01d9 Extracting [=========>                                         ]  23.95MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:06.2708642Z  49ec2dab01d9 Extracting [==========>                                        ]   27.3MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:06.3721379Z  49ec2dab01d9 Extracting [===========>                                       ]  30.08MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:06.4798339Z  49ec2dab01d9 Extracting [============>                                      ]  31.75MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:06.6724003Z  49ec2dab01d9 Extracting [============>                                      ]  32.31MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:06.8439927Z  49ec2dab01d9 Extracting [============>                                      ]  32.87MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:07.0292984Z  49ec2dab01d9 Extracting [============>                                      ]  33.42MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:07.1983723Z  49ec2dab01d9 Extracting [=============>                                     ]  33.98MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:07.3774085Z  49ec2dab01d9 Extracting [=============>                                     ]  34.54MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:07.5073654Z  49ec2dab01d9 Extracting [=============>                                     ]  35.09MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:07.6775958Z  49ec2dab01d9 Extracting [=============>                                     ]  35.65MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:07.8612854Z  49ec2dab01d9 Extracting [=============>                                     ]  36.21MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:08.0795620Z  49ec2dab01d9 Extracting [==============>                                    ]  37.32MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:08.2760638Z  49ec2dab01d9 Extracting [==============>                                    ]  37.88MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:08.4609650Z  49ec2dab01d9 Extracting [==============>                                    ]  38.44MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:08.6908256Z  49ec2dab01d9 Extracting [===============>                                   ]  38.99MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:08.8615482Z  49ec2dab01d9 Extracting [===============>                                   ]  39.55MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:09.0740836Z  49ec2dab01d9 Extracting [===============>                                   ]  40.11MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:09.2181631Z  49ec2dab01d9 Extracting [===============>                                   ]  40.67MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:09.3565947Z  49ec2dab01d9 Extracting [===============>                                   ]  41.22MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:09.4925908Z  49ec2dab01d9 Extracting [================>                                  ]  41.78MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:09.6545980Z  49ec2dab01d9 Extracting [================>                                  ]  42.34MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:09.8300722Z  49ec2dab01d9 Extracting [================>                                  ]  42.89MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:09.9920692Z  49ec2dab01d9 Extracting [================>                                  ]  43.45MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:10.1339422Z  49ec2dab01d9 Extracting [=================>                                 ]  44.01MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:10.3236351Z  49ec2dab01d9 Extracting [=================>                                 ]  44.56MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:10.4721492Z  49ec2dab01d9 Extracting [=================>                                 ]  45.12MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:10.6407170Z  49ec2dab01d9 Extracting [=================>                                 ]  45.68MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:10.8217060Z  49ec2dab01d9 Extracting [=================>                                 ]  46.24MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:10.9540455Z  49ec2dab01d9 Extracting [==================>                                ]  46.79MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.0763257Z  49ec2dab01d9 Extracting [==================>                                ]  49.02MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.2554818Z  49ec2dab01d9 Extracting [===================>                               ]  49.58MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.3597542Z  49ec2dab01d9 Extracting [===================>                               ]  50.69MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.4601408Z  49ec2dab01d9 Extracting [=====================>                             ]  56.26MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.5601130Z  49ec2dab01d9 Extracting [========================>                          ]  64.06MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.6628069Z  49ec2dab01d9 Extracting [===========================>                       ]  71.86MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.7680091Z  49ec2dab01d9 Extracting [===============================>                   ]  80.22MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.8680304Z  49ec2dab01d9 Extracting [==================================>                ]  89.13MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:11.9733347Z  49ec2dab01d9 Extracting [=====================================>             ]  97.48MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:12.0786983Z  49ec2dab01d9 Extracting [=========================================>         ]  107.5MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:12.1825718Z  49ec2dab01d9 Extracting [=============================================>     ]  118.1MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:12.2909343Z  49ec2dab01d9 Extracting [================================================>  ]  125.9MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:12.3311384Z  49ec2dab01d9 Extracting [==================================================>]  129.4MB/129.4MB
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5313799Z  49ec2dab01d9 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5323584Z  ab24264a27e9 Extracting [==================================================>]  5.327kB/5.327kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5331191Z  ab24264a27e9 Extracting [==================================================>]  5.327kB/5.327kB
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5419749Z  ab24264a27e9 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5431189Z  96d30d9fbee8 Extracting [==================================================>]     120B/120B
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5435567Z  96d30d9fbee8 Extracting [==================================================>]     120B/120B
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5504998Z  96d30d9fbee8 Pull complete 
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5573698Z  mysql Pulled 
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5595720Z  Network sharing-vision-backend_default  Creating
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5951884Z  Network sharing-vision-backend_default  Created
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.5955457Z  Container article_db  Creating
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.6163072Z  Container article_db  Created
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.6165499Z  Container article_migrate  Creating
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.6265174Z  Container article_migrate  Created
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.6265887Z  Container article_api  Creating
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.6356916Z  Container article_api  Created
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.6367043Z  Container article_db  Starting
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.8136197Z  Container article_db  Started
+docker-validation	Start Docker Compose	2026-07-15T10:47:13.8136755Z  Container article_db  Waiting
+docker-validation	Start Docker Compose	2026-07-15T10:47:24.3148727Z  Container article_db  Healthy
+docker-validation	Start Docker Compose	2026-07-15T10:47:24.3149289Z  Container article_migrate  Starting
+docker-validation	Start Docker Compose	2026-07-15T10:47:24.4277881Z  Container article_migrate  Started
+docker-validation	Start Docker Compose	2026-07-15T10:47:24.4278655Z  Container article_migrate  Waiting
+docker-validation	Start Docker Compose	2026-07-15T10:47:24.9295099Z  Container article_migrate  Exited
+docker-validation	Start Docker Compose	2026-07-15T10:47:24.9295774Z  Container article_api  Starting
+docker-validation	Start Docker Compose	2026-07-15T10:47:25.0589845Z  Container article_api  Started
+docker-validation	Wait for API to be healthy	﻿2026-07-15T10:47:25.0675446Z ##[group]Run for i in {1..24}; do
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0675800Z ^[[36;1mfor i in {1..24}; do^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0676163Z ^[[36;1m  if curl --fail http://localhost:8080/health; then^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0676503Z ^[[36;1m    exit 0^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0676704Z ^[[36;1m  fi^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0676895Z ^[[36;1m  sleep 5^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0677118Z ^[[36;1mdone^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0677321Z ^[[36;1mdocker compose ps^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0677574Z ^[[36;1mdocker compose logs --no-color^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0677833Z ^[[36;1mexit 1^[[0m
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0737132Z shell: /usr/bin/bash -e {0}
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0737381Z ##[endgroup]
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0897301Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0897797Z                                  Dload  Upload   Total   Spent    Left  Speed
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0898055Z 
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0909660Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0913657Z 100    15  100    15    0     0  11389      0 --:--:-- --:--:-- --:--:-- 15000
+docker-validation	Wait for API to be healthy	2026-07-15T10:47:25.0920777Z {"status":"ok"}
+docker-validation	Setup Node	﻿2026-07-15T10:47:25.1007292Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+docker-validation	Setup Node	2026-07-15T10:47:25.1008884Z ##[group]Run actions/setup-node@v4
+docker-validation	Setup Node	2026-07-15T10:47:25.1009147Z with:
+docker-validation	Setup Node	2026-07-15T10:47:25.1009336Z   node-version: 20
+docker-validation	Setup Node	2026-07-15T10:47:25.1009539Z   always-auth: false
+docker-validation	Setup Node	2026-07-15T10:47:25.1009747Z   check-latest: false
+docker-validation	Setup Node	2026-07-15T10:47:25.1012492Z   token: ***
+docker-validation	Setup Node	2026-07-15T10:47:25.1012690Z ##[endgroup]
+docker-validation	Setup Node	2026-07-15T10:47:25.2417806Z Attempting to download 20...
+docker-validation	Setup Node	2026-07-15T10:47:25.2522521Z (node:5010) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+docker-validation	Setup Node	2026-07-15T10:47:25.2524091Z (Use `node --trace-deprecation ...` to show where the warning was created)
+docker-validation	Setup Node	2026-07-15T10:47:25.6684057Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+docker-validation	Setup Node	2026-07-15T10:47:25.9948702Z Extracting ...
+docker-validation	Setup Node	2026-07-15T10:47:26.0069488Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/a428f20d-0546-4e64-8eef-931c5b83889d -f /home/runner/work/_temp/c4f1227c-8999-43f8-8d66-f13db09f22a4
+docker-validation	Setup Node	2026-07-15T10:47:27.0361347Z Adding to the cache ...
+docker-validation	Setup Node	2026-07-15T10:47:28.8624558Z ##[group]Environment details
+docker-validation	Setup Node	2026-07-15T10:47:29.0915691Z node: v20.20.2
+docker-validation	Setup Node	2026-07-15T10:47:29.0916173Z npm: 10.8.2
+docker-validation	Setup Node	2026-07-15T10:47:29.0916489Z yarn: 1.22.22
+docker-validation	Setup Node	2026-07-15T10:47:29.0917278Z ##[endgroup]
+docker-validation	Install Newman	﻿2026-07-15T10:47:29.1096023Z ##[group]Run npm install -g newman
+docker-validation	Install Newman	2026-07-15T10:47:29.1096343Z ^[[36;1mnpm install -g newman^[[0m
+docker-validation	Install Newman	2026-07-15T10:47:29.1159375Z shell: /usr/bin/bash -e {0}
+docker-validation	Install Newman	2026-07-15T10:47:29.1159643Z ##[endgroup]
+docker-validation	Install Newman	2026-07-15T10:47:31.6958418Z npm warn deprecated har-validator@5.1.5: this library is no longer supported
+docker-validation	Install Newman	2026-07-15T10:47:32.0658262Z npm warn deprecated uuid@3.4.0: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+docker-validation	Install Newman	2026-07-15T10:47:32.3096297Z npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+docker-validation	Install Newman	2026-07-15T10:47:33.2318331Z npm warn deprecated @faker-js/faker@5.5.3: Please update to a newer version.
+docker-validation	Install Newman	2026-07-15T10:47:33.2469230Z 
+docker-validation	Install Newman	2026-07-15T10:47:33.2469815Z added 148 packages in 4s
+docker-validation	Install Newman	2026-07-15T10:47:33.2470138Z 
+docker-validation	Install Newman	2026-07-15T10:47:33.2470523Z 21 packages are looking for funding
+docker-validation	Install Newman	2026-07-15T10:47:33.2470865Z   run `npm fund` for details
+docker-validation	Run Newman Tests	﻿2026-07-15T10:47:33.2649976Z ##[group]Run newman run postman/Sharing-Vision-Article-API.postman_collection.json \
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.2650642Z ^[[36;1mnewman run postman/Sharing-Vision-Article-API.postman_collection.json \^[[0m
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.2651170Z ^[[36;1m  -e postman/Sharing-Vision-Local.postman_environment.json^[[0m
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.2711179Z shell: /usr/bin/bash -e {0}
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.2711454Z ##[endgroup]
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.9557114Z newman
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.9557417Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.9559184Z Sharing Vision Article API
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.9585806Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.9586253Z → Health Check
+docker-validation	Run Newman Tests	2026-07-15T10:47:33.9946184Z   GET http://localhost:8080/health [200 OK, 138B, 27ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0145476Z   ✓  Status code is 200
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0169077Z   ✓  Status is ok
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0237048Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0237552Z → Create Draft Article
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0471647Z   POST http://localhost:8080/article/ [201 Created, 528B, 18ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0521983Z   ✓  Status code is 201
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0529479Z   ✓  Created ID exists and status is draft
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0567324Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0567807Z → List Draft Articles
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0649814Z   GET http://localhost:8080/article/10/0?status=draft [200 OK, 573B, 3ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0697725Z   ✓  Status code is 200
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0702766Z   ✓  Returns pagination structure
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0779377Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0779872Z → Get Article By ID
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0847583Z   GET http://localhost:8080/article/1 [200 OK, 515B, 2ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0889643Z   ✓  Status code is 200
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0943846Z   1. ID matches
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0988143Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.0988752Z → Update to Publish
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1090608Z   PUT http://localhost:8080/article/1 [200 OK, 527B, 5ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1143418Z   ✓  Status code is 200
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1153941Z   ✓  Status is publish
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1192226Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1192691Z → List Published Articles
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1266413Z   GET http://localhost:8080/article/10/0?status=publish [200 OK, 581B, 3ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1319411Z   ✓  Status code is 200
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1356830Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1357257Z → Move Article To Trash
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1438484Z   DELETE http://localhost:8080/article/1 [200 OK, 166B, 4ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1478362Z   ✓  Status code is 200
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1489432Z   2. Status is thrash
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1526575Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1526935Z → List Trashed Articles
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1594074Z   GET http://localhost:8080/article/10/0?status=thrash [200 OK, 580B, 3ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1636812Z   ✓  Status code is 200
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1674905Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1675330Z → Invalid Title
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1738864Z   POST http://localhost:8080/article/ [400 Bad Request, 335B, 2ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1785977Z   ✓  Status code is 400
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1789393Z   ✓  Validation error contains title field
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1832291Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1832740Z → Invalid Content
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1887886Z   POST http://localhost:8080/article/ [400 Bad Request, 345B, 2ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1932628Z   ✓  Status code is 400
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1938249Z   ✓  Validation error contains content field
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1982223Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.1982517Z → Invalid Category
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2042279Z   POST http://localhost:8080/article/ [400 Bad Request, 345B, 1ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2076065Z   ✓  Status code is 400
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2079422Z   ✓  Validation error contains category field
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2120229Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2120654Z → Invalid Status
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2183284Z   POST http://localhost:8080/article/ [400 Bad Request, 341B, 1ms]
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2210610Z   ✓  Status code is 400
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2213987Z   ✓  Validation error contains status field
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2317390Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2318410Z ┌─────────────────────────┬─────────────────┬─────────────────┐
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2319533Z │                         │        executed │          failed │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2321208Z ├─────────────────────────┼─────────────────┼─────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2322240Z │              iterations │               1 │               0 │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2323120Z ├─────────────────────────┼─────────────────┼─────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2323672Z │                requests │              12 │               0 │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2324173Z ├─────────────────────────┼─────────────────┼─────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2324628Z │            test-scripts │              12 │               0 │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2325110Z ├─────────────────────────┼─────────────────┼─────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2325573Z │      prerequest-scripts │               0 │               0 │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2326084Z ├─────────────────────────┼─────────────────┼─────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2326522Z │              assertions │              22 │               2 │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2326987Z ├─────────────────────────┴─────────────────┴─────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2327483Z │ total run duration: 271ms                                   │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2327975Z ├─────────────────────────────────────────────────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2328449Z │ total data received: 3.45kB (approx)                        │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2328952Z ├─────────────────────────────────────────────────────────────┤
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2329684Z │ average response time: 5ms [min: 1ms, max: 27ms, s.d.: 7ms] │
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2330183Z └─────────────────────────────────────────────────────────────┘
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2425069Z 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2425587Z   #  failure         detail                                 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2426413Z                                                             
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2427234Z  1.  AssertionError  ID matches                             
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2428098Z                      expected 1 to deeply equal '1'         
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2428909Z                      at assertion:1 in test-script          
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2429832Z                      inside "Get Article By ID"             
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2430629Z                                                             
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2431436Z  2.  AssertionError  Status is thrash                       
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2432027Z                      expected 'ok' to deeply equal 'thrash' 
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2432552Z                      at assertion:1 in test-script          
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2433174Z                      inside "Move Article To Trash"         
+docker-validation	Run Newman Tests	2026-07-15T10:47:34.2553197Z ##[error]Process completed with exit code 1.
+docker-validation	Cleanup	﻿2026-07-15T10:47:34.2602443Z ##[group]Run docker compose logs --no-color
+docker-validation	Cleanup	2026-07-15T10:47:34.2602826Z ^[[36;1mdocker compose logs --no-color^[[0m
+docker-validation	Cleanup	2026-07-15T10:47:34.2603557Z ^[[36;1mdocker compose down -v --remove-orphans^[[0m
+docker-validation	Cleanup	2026-07-15T10:47:34.2662672Z shell: /usr/bin/bash -e {0}
+docker-validation	Cleanup	2026-07-15T10:47:34.2663064Z ##[endgroup]
+docker-validation	Cleanup	2026-07-15T10:47:34.3391173Z time="2026-07-15T10:47:34Z" level=warning msg="/home/runner/work/sharing-vision-backend/sharing-vision-backend/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+docker-validation	Cleanup	2026-07-15T10:47:34.3435741Z article_api      | [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+docker-validation	Cleanup	2026-07-15T10:47:34.3437040Z article_api      | 
+docker-validation	Cleanup	2026-07-15T10:47:34.3438155Z article_api      | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+docker-validation	Cleanup	2026-07-15T10:47:34.3439234Z article_migrate  | 1/u create_posts (9.729087ms)
+docker-validation	Cleanup	2026-07-15T10:47:34.3440321Z article_db       | 2026-07-15 10:47:13+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+docker-validation	Cleanup	2026-07-15T10:47:34.3441460Z article_db       | 2026-07-15 10:47:13+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+docker-validation	Cleanup	2026-07-15T10:47:34.3442332Z article_db       | 2026-07-15 10:47:13+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+docker-validation	Cleanup	2026-07-15T10:47:34.3443405Z article_db       | 2026-07-15 10:47:14+00:00 [Note] [Entrypoint]: Initializing database files
+docker-validation	Cleanup	2026-07-15T10:47:34.3444666Z article_db       | 2026-07-15T10:47:14.052040Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+docker-validation	Cleanup	2026-07-15T10:47:34.3446096Z article_db       | 2026-07-15T10:47:14.052109Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.46) initializing of server in progress as process 81
+docker-validation	Cleanup	2026-07-15T10:47:34.3447093Z article_db       | 2026-07-15T10:47:14.056529Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+docker-validation	Cleanup	2026-07-15T10:47:34.3447932Z article_db       | 2026-07-15T10:47:14.179859Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+docker-validation	Cleanup	2026-07-15T10:47:34.3449123Z article_db       | 2026-07-15T10:47:14.699084Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+docker-validation	Cleanup	2026-07-15T10:47:34.3450153Z article_db       | 2026-07-15 10:47:16+00:00 [Note] [Entrypoint]: Database files initialized
+docker-validation	Cleanup	2026-07-15T10:47:34.3451049Z article_db       | 2026-07-15 10:47:16+00:00 [Note] [Entrypoint]: Starting temporary server
+docker-validation	Cleanup	2026-07-15T10:47:34.3452277Z article_db       | 2026-07-15T10:47:17.144784Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+docker-validation	Cleanup	2026-07-15T10:47:34.3454156Z article_db       | 2026-07-15T10:47:17.145508Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.46) starting as process 125
+docker-validation	Cleanup	2026-07-15T10:47:34.3455133Z article_db       | 2026-07-15T10:47:17.154426Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+docker-validation	Cleanup	2026-07-15T10:47:34.3456073Z article_db       | 2026-07-15T10:47:17.227875Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+docker-validation	Cleanup	2026-07-15T10:47:34.3456911Z article_db       | 2026-07-15T10:47:17.351964Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+docker-validation	Cleanup	2026-07-15T10:47:34.3458062Z article_db       | 2026-07-15T10:47:17.351997Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+docker-validation	Cleanup	2026-07-15T10:47:34.3459631Z article_db       | 2026-07-15T10:47:17.353512Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+docker-validation	Cleanup	2026-07-15T10:47:34.3461006Z article_db       | 2026-07-15T10:47:17.365741Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+docker-validation	Cleanup	2026-07-15T10:47:34.3462059Z article_api      |  - using env:	export GIN_MODE=release
+docker-validation	Cleanup	2026-07-15T10:47:34.3462577Z article_api      |  - using code:	gin.SetMode(gin.ReleaseMode)
+docker-validation	Cleanup	2026-07-15T10:47:34.3473442Z article_api      | 
+docker-validation	Cleanup	2026-07-15T10:47:34.3474295Z article_api      | [GIN-debug] GET    /health                   --> main.main.func1 (4 handlers)
+docker-validation	Cleanup	2026-07-15T10:47:34.3476139Z article_api      | [GIN-debug] POST   /article/                 --> github.com/StefenSutandi/sharing-vision-backend/internal/handler.(*ArticleHandler).Create-fm (4 handlers)
+docker-validation	Cleanup	2026-07-15T10:47:34.3478394Z article_api      | [GIN-debug] POST   /article                  --> github.com/StefenSutandi/sharing-vision-backend/internal/handler.(*ArticleHandler).Create-fm (4 handlers)
+docker-validation	Cleanup	2026-07-15T10:47:34.3480786Z article_api      | [GIN-debug] GET    /article/:param1/:param2  --> github.com/StefenSutandi/sharing-vision-backend/internal/handler.(*ArticleHandler).List-fm (4 handlers)
+docker-validation	Cleanup	2026-07-15T10:47:34.3483265Z article_api      | [GIN-debug] GET    /article/:param1          --> github.com/StefenSutandi/sharing-vision-backend/internal/handler.(*ArticleHandler).GetByID-fm (4 handlers)
+docker-validation	Cleanup	2026-07-15T10:47:34.3485281Z article_api      | [GIN-debug] PUT    /article/:id              --> github.com/StefenSutandi/sharing-vision-backend/internal/handler.(*ArticleHandler).Update-fm (4 handlers)
+docker-validation	Cleanup	2026-07-15T10:47:34.3486646Z article_api      | [GIN-debug] DELETE /article/:id              --> github.com/StefenSutandi/sharing-vision-backend/internal/handler.(*ArticleHandler).Delete-fm (4 handlers)
+docker-validation	Cleanup	2026-07-15T10:47:34.3487482Z article_api      | 2026/07/15 10:47:25 Server starting on port 8080
+docker-validation	Cleanup	2026-07-15T10:47:34.3488183Z article_api      | [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+docker-validation	Cleanup	2026-07-15T10:47:34.3489085Z article_api      | Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+docker-validation	Cleanup	2026-07-15T10:47:34.3489800Z article_api      | [GIN-debug] Listening and serving HTTP on :8080
+docker-validation	Cleanup	2026-07-15T10:47:34.3490916Z article_api      | [GIN] 2026/07/15 - 10:47:25 | 200 |      56.155µs |      172.18.0.1 | GET      "/health"
+docker-validation	Cleanup	2026-07-15T10:47:34.3491701Z article_api      | [GIN] 2026/07/15 - 10:47:33 | 200 |      41.537µs |      172.18.0.1 | GET      "/health"
+docker-validation	Cleanup	2026-07-15T10:47:34.3492379Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 201 |   13.807674ms |      172.18.0.1 | POST     "/article/"
+docker-validation	Cleanup	2026-07-15T10:47:34.3493713Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 200 |    1.023578ms |      172.18.0.1 | GET      "/article/10/0?status=draft"
+docker-validation	Cleanup	2026-07-15T10:47:34.3494601Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 200 |     562.308µs |      172.18.0.1 | GET      "/article/1"
+docker-validation	Cleanup	2026-07-15T10:47:34.3495780Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 200 |     2.50542ms |      172.18.0.1 | PUT      "/article/1"
+docker-validation	Cleanup	2026-07-15T10:47:34.3497323Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 200 |     942.676µs |      172.18.0.1 | GET      "/article/10/0?status=publish"
+docker-validation	Cleanup	2026-07-15T10:47:34.3498628Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 200 |    2.174783ms |      172.18.0.1 | DELETE   "/article/1"
+docker-validation	Cleanup	2026-07-15T10:47:34.3499505Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 200 |     796.605µs |      172.18.0.1 | GET      "/article/10/0?status=thrash"
+docker-validation	Cleanup	2026-07-15T10:47:34.3500312Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 400 |      83.927µs |      172.18.0.1 | POST     "/article/"
+docker-validation	Cleanup	2026-07-15T10:47:34.3501063Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 400 |      83.015µs |      172.18.0.1 | POST     "/article/"
+docker-validation	Cleanup	2026-07-15T10:47:34.3501804Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 400 |      50.734µs |      172.18.0.1 | POST     "/article/"
+docker-validation	Cleanup	2026-07-15T10:47:34.3502551Z article_api      | [GIN] 2026/07/15 - 10:47:34 | 400 |       75.14µs |      172.18.0.1 | POST     "/article/"
+docker-validation	Cleanup	2026-07-15T10:47:34.3504089Z article_db       | 2026-07-15T10:47:17.365823Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.46'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+docker-validation	Cleanup	2026-07-15T10:47:34.3505384Z article_db       | 2026-07-15 10:47:17+00:00 [Note] [Entrypoint]: Temporary server started.
+docker-validation	Cleanup	2026-07-15T10:47:34.3505988Z article_db       | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+docker-validation	Cleanup	2026-07-15T10:47:34.3506668Z article_db       | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+docker-validation	Cleanup	2026-07-15T10:47:34.3507449Z article_db       | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+docker-validation	Cleanup	2026-07-15T10:47:34.3508213Z article_db       | Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+docker-validation	Cleanup	2026-07-15T10:47:34.3508953Z article_db       | Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+docker-validation	Cleanup	2026-07-15T10:47:34.3509671Z article_db       | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+docker-validation	Cleanup	2026-07-15T10:47:34.3510407Z article_db       | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+docker-validation	Cleanup	2026-07-15T10:47:34.3511085Z article_db       | 2026-07-15 10:47:19+00:00 [Note] [Entrypoint]: Creating database article
+docker-validation	Cleanup	2026-07-15T10:47:34.3511506Z article_db       | 
+docker-validation	Cleanup	2026-07-15T10:47:34.3511949Z article_db       | 2026-07-15 10:47:19+00:00 [Note] [Entrypoint]: Stopping temporary server
+docker-validation	Cleanup	2026-07-15T10:47:34.3513086Z article_db       | 2026-07-15T10:47:19.124439Z 12 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.46).
+docker-validation	Cleanup	2026-07-15T10:47:34.3514365Z article_db       | 2026-07-15T10:47:19.863724Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.46)  MySQL Community Server - GPL.
+docker-validation	Cleanup	2026-07-15T10:47:34.3515231Z article_db       | 2026-07-15 10:47:20+00:00 [Note] [Entrypoint]: Temporary server stopped
+docker-validation	Cleanup	2026-07-15T10:47:34.3515652Z article_db       | 
+docker-validation	Cleanup	2026-07-15T10:47:34.3516186Z article_db       | 2026-07-15 10:47:20+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+docker-validation	Cleanup	2026-07-15T10:47:34.3516668Z article_db       | 
+docker-validation	Cleanup	2026-07-15T10:47:34.3517642Z article_db       | 2026-07-15T10:47:20.304047Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+docker-validation	Cleanup	2026-07-15T10:47:34.3518853Z article_db       | 2026-07-15T10:47:20.304736Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.46) starting as process 1
+docker-validation	Cleanup	2026-07-15T10:47:34.3519691Z article_db       | 2026-07-15T10:47:20.309515Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+docker-validation	Cleanup	2026-07-15T10:47:34.3520614Z article_db       | 2026-07-15T10:47:20.384002Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+docker-validation	Cleanup	2026-07-15T10:47:34.3521401Z article_db       | 2026-07-15T10:47:20.483816Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+docker-validation	Cleanup	2026-07-15T10:47:34.3522503Z article_db       | 2026-07-15T10:47:20.483848Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+docker-validation	Cleanup	2026-07-15T10:47:34.3524539Z article_db       | 2026-07-15T10:47:20.486332Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+docker-validation	Cleanup	2026-07-15T10:47:34.3526300Z article_db       | 2026-07-15T10:47:20.499152Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+docker-validation	Cleanup	2026-07-15T10:47:34.3528066Z article_db       | 2026-07-15T10:47:20.499260Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.46'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+docker-validation	Cleanup	2026-07-15T10:47:34.4159490Z time="2026-07-15T10:47:34Z" level=warning msg="/home/runner/work/sharing-vision-backend/sharing-vision-backend/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+docker-validation	Cleanup	2026-07-15T10:47:34.4184619Z  Container article_api  Stopping
+docker-validation	Cleanup	2026-07-15T10:47:35.0919600Z  Container article_api  Stopped
+docker-validation	Cleanup	2026-07-15T10:47:35.0920087Z  Container article_api  Removing
+docker-validation	Cleanup	2026-07-15T10:47:35.0972304Z  Container article_api  Removed
+docker-validation	Cleanup	2026-07-15T10:47:35.0972912Z  Container article_migrate  Stopping
+docker-validation	Cleanup	2026-07-15T10:47:35.0976438Z  Container article_migrate  Stopped
+docker-validation	Cleanup	2026-07-15T10:47:35.0977152Z  Container article_migrate  Removing
+docker-validation	Cleanup	2026-07-15T10:47:35.1012424Z  Container article_migrate  Removed
+docker-validation	Cleanup	2026-07-15T10:47:35.1013311Z  Container article_db  Stopping
+docker-validation	Cleanup	2026-07-15T10:47:36.0865140Z  Container article_db  Stopped
+docker-validation	Cleanup	2026-07-15T10:47:36.0865934Z  Container article_db  Removing
+docker-validation	Cleanup	2026-07-15T10:47:36.1001518Z  Container article_db  Removed
+docker-validation	Cleanup	2026-07-15T10:47:36.1008872Z  Network sharing-vision-backend_default  Removing
+docker-validation	Cleanup	2026-07-15T10:47:36.1818443Z  Network sharing-vision-backend_default  Removed
+docker-validation	Post Run actions/checkout@v4	﻿2026-07-15T10:47:36.1973307Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.1974611Z Post job cleanup.
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.2841220Z [command]/usr/bin/git version
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.2886944Z git version 2.54.0
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.2963314Z Temporarily overriding HOME='/home/runner/work/_temp/2934eb5d-a539-4150-abd4-4434cfe42fbd' before making global git config changes
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.2965041Z Adding repository directory to the temporary git global config as a safe directory
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.2969442Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sharing-vision-backend/sharing-vision-backend
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3012169Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3054887Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3310141Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3344701Z http.https://github.com/.extraheader
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3354784Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3416930Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3751345Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+docker-validation	Post Run actions/checkout@v4	2026-07-15T10:47:36.3791938Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+docker-validation	Complete job	﻿2026-07-15T10:47:36.4258717Z Cleaning up orphan processes
+docker-validation	Complete job	2026-07-15T10:47:36.4865417Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
