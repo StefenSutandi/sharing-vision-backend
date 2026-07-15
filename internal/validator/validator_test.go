@@ -18,7 +18,7 @@ func TestArticleValidator(t *testing.T) {
 	}{
 		{
 			name: "valid publish",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  validContent,
 				Category: "Tech",
@@ -28,7 +28,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "valid draft",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  validContent,
 				Category: "Tech",
@@ -38,7 +38,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "valid thrash",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  validContent,
 				Category: "Tech",
@@ -48,7 +48,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "empty title",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "",
 				Content:  validContent,
 				Category: "Tech",
@@ -58,7 +58,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "title below 20 chars",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "too short",
 				Content:  validContent,
 				Category: "Tech",
@@ -68,7 +68,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "title above 200 chars",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    tooLongTitle,
 				Content:  validContent,
 				Category: "Tech",
@@ -78,7 +78,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "empty content",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  "",
 				Category: "Tech",
@@ -88,7 +88,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "content below 200 chars",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  "too short",
 				Category: "Tech",
@@ -98,7 +98,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "empty category",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  validContent,
 				Category: "",
@@ -108,7 +108,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "category below 3 chars",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  validContent,
 				Category: "Te",
@@ -118,7 +118,7 @@ func TestArticleValidator(t *testing.T) {
 		},
 		{
 			name: "invalid status",
-			payload: dto.ArticlePayload{
+			payload: dto.CreateArticleReq{
 				Title:    "Valid title minimum twenty",
 				Content:  validContent,
 				Category: "Tech",
