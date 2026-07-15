@@ -7,264 +7,384 @@
 	"item": [
 		{
 			"name": "Health Check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status is ok\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
 					"raw": "{{base_url}}/health",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"health"
-					]
+					"host": ["{{base_url}}"],
+					"path": ["health"]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Published Article",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"This is a valid published title of length twenty\",\n    \"content\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n    \"category\": \"Technology\",\n    \"status\": \"publish\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{base_url}}/article/",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						""
-					]
-				}
-			},
-			"response": []
+			}
 		},
 		{
 			"name": "Create Draft Article",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Created ID exists and status is draft\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.be.a(\"number\");",
+							"    pm.expect(jsonData.status).to.eql(\"draft\");",
+							"    pm.collectionVariables.set(\"article_id\", jsonData.id);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [{"key": "Content-Type", "value": "application/json"}],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"This is a valid draft title of length twenty\",\n    \"content\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n    \"category\": \"Business\",\n    \"status\": \"draft\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": "{\n    \"title\": \"This is a valid draft title of length twenty\",\n    \"content\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n    \"category\": \"Business\",\n    \"status\": \"draft\"\n}"
 				},
 				"url": {
 					"raw": "{{base_url}}/article/",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						""
-					]
+					"host": ["{{base_url}}"],
+					"path": ["article", ""]
 				}
-			},
-			"response": []
+			}
 		},
 		{
-			"name": "Create Invalid Article",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"too short\",\n    \"content\": \"too short\",\n    \"category\": \"Tech\",\n    \"status\": \"invalid_status\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
+			"name": "List Draft Articles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Returns pagination structure\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data).to.be.an(\"array\");",
+							"    pm.expect(jsonData.pagination).to.be.an(\"object\");",
+							"});"
+						],
+						"type": "text/javascript"
 					}
-				},
-				"url": {
-					"raw": "{{base_url}}/article/",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						""
-					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Paginated Articles",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/article/10/0",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						"10",
-						"0"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Published Articles",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/article/10/0?status=publish",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						"10",
-						"0"
-					],
-					"query": [
-						{
-							"key": "status",
-							"value": "publish"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Draft Articles",
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
 					"raw": "{{base_url}}/article/10/0?status=draft",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						"10",
-						"0"
-					],
-					"query": [
-						{
-							"key": "status",
-							"value": "draft"
-						}
-					]
+					"host": ["{{base_url}}"],
+					"path": ["article", "10", "0"],
+					"query": [{"key": "status", "value": "draft"}]
 				}
-			},
-			"response": []
+			}
 		},
 		{
-			"name": "Get Trashed Articles",
+			"name": "Get Article By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"ID matches\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"article_id\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/article/{{article_id}}",
+					"host": ["{{base_url}}"],
+					"path": ["article", "{{article_id}}"]
+				}
+			}
+		},
+		{
+			"name": "Update to Publish",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status is publish\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"publish\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"This is a valid published title of length twenty\",\n    \"content\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n    \"category\": \"Technology\",\n    \"status\": \"publish\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/article/{{article_id}}",
+					"host": ["{{base_url}}"],
+					"path": ["article", "{{article_id}}"]
+				}
+			}
+		},
+		{
+			"name": "List Published Articles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/article/10/0?status=publish",
+					"host": ["{{base_url}}"],
+					"path": ["article", "10", "0"],
+					"query": [{"key": "status", "value": "publish"}]
+				}
+			}
+		},
+		{
+			"name": "Move Article To Trash",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status is thrash\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"thrash\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/article/{{article_id}}",
+					"host": ["{{base_url}}"],
+					"path": ["article", "{{article_id}}"]
+				}
+			}
+		},
+		{
+			"name": "List Trashed Articles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
 					"raw": "{{base_url}}/article/10/0?status=thrash",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						"10",
-						"0"
-					],
-					"query": [
-						{
-							"key": "status",
-							"value": "thrash"
-						}
-					]
+					"host": ["{{base_url}}"],
+					"path": ["article", "10", "0"],
+					"query": [{"key": "status", "value": "thrash"}]
 				}
-			},
-			"response": []
+			}
 		},
 		{
-			"name": "Get Article By ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/article/1",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						"1"
-					]
+			"name": "Invalid Title",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Validation error contains title field\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.include(\"Title\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Article",
+			],
 			"request": {
-				"method": "PUT",
-				"header": [],
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"This is an updated valid title of length twenty\",\n    \"content\": \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\n    \"category\": \"Business\",\n    \"status\": \"publish\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": "{\n    \"title\": \"short\",\n    \"content\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n    \"category\": \"Technology\",\n    \"status\": \"publish\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/article/1",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						"1"
-					]
+					"raw": "{{base_url}}/article/",
+					"host": ["{{base_url}}"],
+					"path": ["article", ""]
 				}
-			},
-			"response": []
+			}
 		},
 		{
-			"name": "Move Article To Trash",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/article/1",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"article",
-						"1"
-					]
+			"name": "Invalid Content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Validation error contains content field\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.include(\"Content\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			},
-			"response": []
+			],
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"This is a valid published title of length twenty\",\n    \"content\": \"short\",\n    \"category\": \"Technology\",\n    \"status\": \"publish\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/article/",
+					"host": ["{{base_url}}"],
+					"path": ["article", ""]
+				}
+			}
+		},
+		{
+			"name": "Invalid Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Validation error contains category field\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.include(\"Category\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"This is a valid published title of length twenty\",\n    \"content\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n    \"category\": \"Te\",\n    \"status\": \"publish\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/article/",
+					"host": ["{{base_url}}"],
+					"path": ["article", ""]
+				}
+			}
+		},
+		{
+			"name": "Invalid Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Validation error contains status field\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.include(\"Status\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"This is a valid published title of length twenty\",\n    \"content\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n    \"category\": \"Technology\",\n    \"status\": \"invalid_status\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/article/",
+					"host": ["{{base_url}}"],
+					"path": ["article", ""]
+				}
+			}
 		}
 	],
 	"variable": [
 		{
 			"key": "base_url",
 			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "article_id",
+			"value": "",
 			"type": "string"
 		}
 	]

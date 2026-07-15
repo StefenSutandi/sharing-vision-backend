@@ -1,42 +1,42 @@
 version: '3.8'
-
 services:
-  backend:
-    build: .
-    ports:
-      - "8080:8080"
+  mysql:
+    image: mysql:8.0
+    container_name: article_db
     environment:
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_USER=root
-      - DB_PASSWORD=root
-      - DB_NAME=article
-      - PORT=8080
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: article
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  migrate:
+    image: migrate/migrate:v4.16.2
+    container_name: article_migrate
     depends_on:
       mysql:
         condition: service_healthy
-    networks:
-      - app-network
-
-  mysql:
-    image: mysql:8.0
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=article
     volumes:
-      - mysql_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    networks:
-      - app-network
+      - ./migrations:/migrations:ro
+    command:
+      - -path
+      - /migrations
+      - -database
+      - mysql://root:root@tcp(mysql:3306)/article
+      - up
 
-volumes:
-  mysql_data:
-
-networks:
-  app-network:
+  api:
+    build: .
+    container_name: article_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      - PORT=8080
+      - DB_DSN=root:root@tcp(mysql:3306)/article?charset=utf8mb4&parseTime=True&loc=Local
