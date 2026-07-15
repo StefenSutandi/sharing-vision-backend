@@ -2,6 +2,7 @@ package handler
 
 import (
 	"errors"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -45,7 +46,7 @@ func (h *ArticleHandler) Create(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, dto.ErrorResponse{
 			Error: dto.ErrorDetail{
 				Code:    "VALIDATION_ERROR",
-				Message: "The request contains invalid fields.",
+				Message: fmt.Sprintf("The request contains invalid fields: %v", valErrs),
 				Fields:  valErrs,
 			},
 		})
@@ -157,7 +158,7 @@ func (h *ArticleHandler) Update(c *gin.Context) {
 	}
 	if valErrs != nil {
 		c.JSON(http.StatusBadRequest, dto.ErrorResponse{
-			Error: dto.ErrorDetail{Code: "VALIDATION_ERROR", Message: "The request contains invalid fields.", Fields: valErrs},
+			Error: dto.ErrorDetail{Code: "VALIDATION_ERROR", Message: fmt.Sprintf("The request contains invalid fields: %v", valErrs), Fields: valErrs},
 		})
 		return
 	}
